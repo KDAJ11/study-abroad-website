@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Study Abroad Consultant | Your Path to Global Education</title>
+    <meta name="description" content="Expert study abroad consulting for UK, Canada, USA, Ireland, Germany & Australia. 10+ years helping students achieve their dreams. Get started today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Trust-building color scheme with conversion optimization */
+            --primary-blue: #0066CC;
+            --primary-blue-dark: #004C99;
+            --primary-blue-light: #3385DB;
+            --accent-orange: #FF6B35;
+            --accent-green: #10B981;
+            --neutral-100: #F8FAFC;
+            --neutral-200: #E2E8F0;
+            --neutral-300: #CBD5E1;
+            --neutral-400: #94A3B8;
+            --neutral-700: #334155;
+            --neutral-800: #1E293B;
+            --neutral-900: #0F172A;
+            --white: #FFFFFF;
+            
+            /* Typography */
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            /* Border radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--neutral-800);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--neutral-200);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) var(--spacing-md);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--neutral-700);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--neutral-700);
+            transition: all 0.3s ease;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.35);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neutral-100);
+            transform: translateY(-2px);
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-3xl);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .trust-badge svg {
+            color: var(--accent-orange);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--neutral-700);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: var(--spacing-xl);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--neutral-700);
+            margin-top: 0.25rem;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-card {
+            position: absolute;
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-card.card-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .hero-card.card-2 {
+            top: 45%;
+            right: 5%;
+            animation-delay: 0.5s;
+        }
+
+        .hero-card.card-3 {
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+        }
+
+        .card-text {
+            font-weight: 600;
+            color: var(--neutral-800);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-2xl);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--neutral-700);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            border: 2px solid var(--neutral-200);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .service-description {
+            color: var(--neutral-700);
+            line-height: 1.7;
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+
+        /* Destinations Section */
+        .destinations {
+            background: var(--neutral-100);
+        }
+
+        .destinations-tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .destination-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--neutral-700);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .destination-tab:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .destination-tab.active {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .destinations-content {
+            position: relative;
+            min-height: 500px;
+        }
+
+        .destination-panel {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .destination-panel.active {
+            display: block;
+        }
+
+        .destination-info {
+            background: var(--white);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .destination-info h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .info-item {
+            background: var(--neutral-100);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--neutral-700);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .destination-highlights {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .destination-highlights h4,
+        .top-universities h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .destination-highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .destination-highlights li {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            color: var(--neutral-700);
+        }
+
+        .destination-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .university-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .university-tags span {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Cost Calculator */
+        .cost-calculator {
+            background: var(--white);
+        }
+
+        .calculator-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--neutral-100);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--neutral-700);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--neutral-300);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: var(--white);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        #calculate-btn {
+            grid-column: 1 / -1;
+        }
+
+        .calculator-result {
+            background: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .calculator-result h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .result-breakdown {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            background: var(--neutral-100);
+            border-radius: var(--radius-md);
+        }
+
+        .breakdown-item.total {
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: var(--spacing-md);
+        }
+
+        .result-note {
+            font-size: 0.9rem;
+            color: var(--neutral-700);
+            font-style: italic;
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .calculator-result .btn {
+            width: 100%;
+        }
+
+        /* Process Timeline */
+        .process {
+            background: var(--neutral-100);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--neutral-300);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 0 0 4px var(--neutral-100);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .timeline-content p {
+            color: var(--neutral-700);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .timeline-duration {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--neutral-100);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .process-cta {
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+
+        /* Resources Section */
+        .resources {
+            background: var(--white);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .resource-card {
+            background: var(--neutral-100);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .resource-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .resource-list {
+            list-style: none;
+        }
+
+        .resource-list li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .resource-list a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .resource-list a:hover {
+            color: var(--primary-blue-dark);
+            text-decoration: underline;
+        }
+
+        .resources-help {
+            max-width: 700px;
+            margin: var(--spacing-2xl) auto 0;
+        }
+
+        .help-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .help-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .help-card p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--neutral-100);
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-lg);
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--neutral-900);
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--neutral-100);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 var(--spacing-lg) var(--spacing-lg);
+            color: var(--neutral-700);
+            line-height: 1.7;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: var(--white);
+        }
+
+        .social-feeds {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .social-feed {
+            background: var(--neutral-100);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+        }
+
+        .social-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-header span {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+        }
+
+        .social-embed-text {
+            color: var(--neutral-700);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-description {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+        }
+
+        .cta-section .btn-primary {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .cta-section .btn-primary:hover {
+            background: var(--neutral-100);
+        }
+
+        .cta-section .btn-secondary {
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .cta-section .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--neutral-900);
+            color: var(--neutral-300);
+            padding: var(--spacing-3xl) 0 var(--spacing-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-description {
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-links a {
+            color: var(--neutral-300);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-contact svg {
+            color: var(--primary-blue);
+        }
+
+        .footer-contact a {
+            color: var(--neutral-300);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--neutral-400);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .resources-grid,
+            .social-feeds {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .hero-stats {
+                gap: var(--spacing-md);
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .destinations-tabs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 2rem;
+            }
+            
+            .timeline-marker {
+                left: -1.5rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .destinations-tabs {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="#" class="logo">The Study Abroad Consultant</a>
+            <div class="nav-menu">
+                <a href="#destinations" class="nav-link">Destinations</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#resources" class="nav-link">Resources</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="btn btn-primary btn-small">Get Started</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="currentColor"/>
+                    </svg>
+                    <span>10+ Years of Excellence</span>
+                </div>
+                <h1 class="hero-title">
+                    Your Journey to<br>
+                    <span class="gradient-text">Global Education</span><br>
+                    Starts Here
+                </h1>
+                <p class="hero-description">
+                    Expert guidance for studying in the UK, Canada, USA, Ireland, Germany & Australia. 
+                    From application to arrival, we're with you every step of the way.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn btn-primary btn-large" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                        </svg>
+                        Start Your Journey on WhatsApp
+                    </a>
+                    <a href="mailto:info@thestudyabroadconsultant.ca" class="btn btn-secondary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                        </svg>
+                        Email Us
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">1,500+</div>
+                        <div class="stat-label">Students Placed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Visa Success Rate</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Partner Universities</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card card-1">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-text">University Selection</div>
+                </div>
+                <div class="hero-card card-2">
+                    <div class="card-icon">✈️</div>
+                    <div class="card-text">Visa Success</div>
+                </div>
+                <div class="hero-card card-3">
+                    <div class="card-icon">🌍</div>
+                    <div class="card-text">Global Opportunities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Complete Support, Every Step</h2>
+                <p class="section-description">From your first inquiry to your first day on campus, we're here to guide you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">University Selection</h3>
+                    <p class="service-description">Personalized recommendations based on your academic goals, budget, and career aspirations</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3 class="service-title">Application Assistance</h3>
+                    <p class="service-description">Expert help with applications, essays, and documentation to maximize your acceptance chances</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛂</div>
+                    <h3 class="service-title">Visa Support</h3>
+                    <p class="service-description">Comprehensive visa guidance with a 98% success rate across all destinations</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3 class="service-title">Document Preparation</h3>
+                    <p class="service-description">Meticulous review and preparation of all required documents for a flawless application</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3 class="service-title">Interview Prep</h3>
+                    <p class="service-description">Mock interviews and coaching to help you confidently ace university and visa interviews</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Post-Arrival Support</h3>
+                    <p class="service-description">Continued assistance with accommodation, orientation, and settling into your new life abroad</p>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn btn-primary" target="_blank">Get Expert Guidance</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Study Destinations</h2>
+                <p class="section-description">Explore your options across six leading study destinations</p>
+            </div>
+            <div class="destinations-tabs">
+                <button class="destination-tab active" data-country="canada">🍁 Canada</button>
+                <button class="destination-tab" data-country="uk">🇬🇧 UK</button>
+                <button class="destination-tab" data-country="usa">🇺🇸 USA</button>
+                <button class="destination-tab" data-country="ireland">🇮🇪 Ireland</button>
+                <button class="destination-tab" data-country="germany">🇩🇪 Germany</button>
+                <button class="destination-tab" data-country="australia">🇦🇺 Australia</button>
+            </div>
+            <div class="destinations-content">
+                <div class="destination-panel active" data-country="canada">
+                    <div class="destination-info">
+                        <h3>Study in Canada</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">💰 Tuition Range</div>
+                                <div class="info-value">$13,000 - $30,000 CAD/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🏠 Living Costs</div>
+                                <div class="info-value">$10,000 - $15,000 CAD/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💼 Work Rights</div>
+                                <div class="info-value">20 hrs/week during studies</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🎓 Post-Study Work</div>
+                                <div class="info-value">Up to 3 years PGWP</div>
+                            </div>
+                        </div>
+                        <div class="destination-highlights">
+                            <h4>Why Canada?</h4>
+                            <ul>
+                                <li>Pathway to permanent residence</li>
+                                <li>High-quality education at affordable costs</li>
+                                <li>Welcoming multicultural society</li>
+                                <li>Safe and peaceful environment</li>
+                            </ul>
+                        </div>
+                        <div class="top-universities">
+                            <h4>Top Universities</h4>
+                            <div class="university-tags">
+                                <span>University of Toronto</span>
+                                <span>UBC</span>
+                                <span>McGill University</span>
+                                <span>University of Waterloo</span>
+                                <span>McMaster University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-panel" data-country="uk">
+                    <div class="destination-info">
+                        <h3>Study in the UK</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">💰 Tuition Range</div>
+                                <div class="info-value">£10,000 - £38,000/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🏠 Living Costs</div>
+                                <div class="info-value">£12,000 - £15,000/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💼 Work Rights</div>
+                                <div class="info-value">20 hrs/week during term</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🎓 Post-Study Work</div>
+                                <div class="info-value">2 years Graduate visa</div>
+                            </div>
+                        </div>
+                        <div class="destination-highlights">
+                            <h4>Why the UK?</h4>
+                            <ul>
+                                <li>World-renowned universities and education system</li>
+                                <li>Shorter degree programs (3-year bachelor's, 1-year master's)</li>
+                                <li>Rich cultural heritage and global connections</li>
+                                <li>Gateway to Europe</li>
+                            </ul>
+                        </div>
+                        <div class="top-universities">
+                            <h4>Top Universities</h4>
+                            <div class="university-tags">
+                                <span>University of Oxford</span>
+                                <span>University of Cambridge</span>
+                                <span>Imperial College London</span>
+                                <span>UCL</span>
+                                <span>LSE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-panel" data-country="usa">
+                    <div class="destination-info">
+                        <h3>Study in the USA</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">💰 Tuition Range</div>
+                                <div class="info-value">$20,000 - $55,000 USD/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🏠 Living Costs</div>
+                                <div class="info-value">$15,000 - $25,000 USD/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💼 Work Rights</div>
+                                <div class="info-value">On-campus only (20 hrs/week)</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🎓 Post-Study Work</div>
+                                <div class="info-value">12-36 months OPT</div>
+                            </div>
+                        </div>
+                        <div class="destination-highlights">
+                            <h4>Why the USA?</h4>
+                            <ul>
+                                <li>Home to the world's top-ranked universities</li>
+                                <li>Cutting-edge research and innovation opportunities</li>
+                                <li>Diverse academic programs and flexible curriculum</li>
+                                <li>Strong industry connections and career opportunities</li>
+                            </ul>
+                        </div>
+                        <div class="top-universities">
+                            <h4>Top Universities</h4>
+                            <div class="university-tags">
+                                <span>MIT</span>
+                                <span>Stanford</span>
+                                <span>Harvard</span>
+                                <span>UC Berkeley</span>
+                                <span>Columbia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-panel" data-country="ireland">
+                    <div class="destination-info">
+                        <h3>Study in Ireland</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">💰 Tuition Range</div>
+                                <div class="info-value">€9,000 - €25,000/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🏠 Living Costs</div>
+                                <div class="info-value">€10,000 - €12,000/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💼 Work Rights</div>
+                                <div class="info-value">20 hrs/week during term</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🎓 Post-Study Work</div>
+                                <div class="info-value">1-2 years Graduate visa</div>
+                            </div>
+                        </div>
+                        <div class="destination-highlights">
+                            <h4>Why Ireland?</h4>
+                            <ul>
+                                <li>English-speaking EU country</li>
+                                <li>Thriving tech and pharmaceutical industries</li>
+                                <li>Friendly and welcoming culture</li>
+                                <li>Lower tuition compared to UK/USA</li>
+                            </ul>
+                        </div>
+                        <div class="top-universities">
+                            <h4>Top Universities</h4>
+                            <div class="university-tags">
+                                <span>Trinity College Dublin</span>
+                                <span>UCD</span>
+                                <span>University of Galway</span>
+                                <span>UCC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-panel" data-country="germany">
+                    <div class="destination-info">
+                        <h3>Study in Germany</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">💰 Tuition Range</div>
+                                <div class="info-value">€0 - €20,000/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🏠 Living Costs</div>
+                                <div class="info-value">€10,000 - €12,000/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💼 Work Rights</div>
+                                <div class="info-value">20 hrs/week during semester</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🎓 Post-Study Work</div>
+                                <div class="info-value">18 months job-seeker visa</div>
+                            </div>
+                        </div>
+                        <div class="destination-highlights">
+                            <h4>Why Germany?</h4>
+                            <ul>
+                                <li>Free or low-cost tuition at public universities</li>
+                                <li>Strong engineering and technical programs</li>
+                                <li>Heart of Europe with excellent travel opportunities</li>
+                                <li>Growing English-taught programs</li>
+                            </ul>
+                        </div>
+                        <div class="top-universities">
+                            <h4>Top Universities</h4>
+                            <div class="university-tags">
+                                <span>TU Munich</span>
+                                <span>LMU Munich</span>
+                                <span>Heidelberg</span>
+                                <span>Humboldt University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-panel" data-country="australia">
+                    <div class="destination-info">
+                        <h3>Study in Australia</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">💰 Tuition Range</div>
+                                <div class="info-value">$20,000 - $45,000 AUD/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🏠 Living Costs</div>
+                                <div class="info-value">$21,000 - $27,000 AUD/year</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">💼 Work Rights</div>
+                                <div class="info-value">48 hrs/fortnight during term</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">🎓 Post-Study Work</div>
+                                <div class="info-value">2-4 years depending on degree</div>
+                            </div>
+                        </div>
+                        <div class="destination-highlights">
+                            <h4>Why Australia?</h4>
+                            <ul>
+                                <li>High quality of life and stunning natural beauty</li>
+                                <li>Strong research and innovation focus</li>
+                                <li>Generous post-study work opportunities</li>
+                                <li>Safe, sunny, and student-friendly cities</li>
+                            </ul>
+                        </div>
+                        <div class="top-universities">
+                            <h4>Top Universities</h4>
+                            <div class="university-tags">
+                                <span>ANU</span>
+                                <span>University of Melbourne</span>
+                                <span>University of Sydney</span>
+                                <span>UNSW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Calculator Section -->
+    <section class="cost-calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Estimate Your Study Costs</h2>
+                <p class="section-description">Get a quick estimate of tuition and living expenses</p>
+            </div>
+            <div class="calculator-card">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="calc-country">Select Country</label>
+                        <select id="calc-country" class="form-control">
+                            <option value="">Choose a destination</option>
+                            <option value="canada">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="usa">United States</option>
+                            <option value="ireland">Ireland</option>
+                            <option value="germany">Germany</option>
+                            <option value="australia">Australia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="calc-program">Program Type</label>
+                        <select id="calc-program" class="form-control">
+                            <option value="">Select program</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="postgraduate">Postgraduate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="calc-duration">Duration (Years)</label>
+                        <select id="calc-duration" class="form-control">
+                            <option value="">Select duration</option>
+                            <option value="1">1 Year</option>
+                            <option value="2">2 Years</option>
+                            <option value="3">3 Years</option>
+                            <option value="4">4 Years</option>
+                        </select>
+                    </div>
+                    <button id="calculate-btn" class="btn btn-primary">Calculate Costs</button>
+                </div>
+                <div id="calculator-result" class="calculator-result" style="display: none;">
+                    <h3>Estimated Total Cost</h3>
+                    <div class="result-breakdown">
+                        <div class="breakdown-item">
+                            <span>Tuition Fees:</span>
+                            <strong id="result-tuition">-</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Living Expenses:</span>
+                            <strong id="result-living">-</strong>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span>Total Estimated Cost:</span>
+                            <strong id="result-total">-</strong>
+                        </div>
+                    </div>
+                    <p class="result-note">*This is an estimate. Actual costs may vary based on university, city, and lifestyle.</p>
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn btn-secondary" target="_blank">Discuss Your Budget</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Journey Timeline</h2>
+                <p class="section-description">A clear roadmap from start to campus</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Initial Consultation</h3>
+                        <p>We discuss your goals, budget, and preferences to create a personalized plan</p>
+                        <span class="timeline-duration">Week 1</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>University Selection</h3>
+                        <p>Shortlist 5-8 universities that match your profile and aspirations</p>
+                        <span class="timeline-duration">Weeks 2-3</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Application Preparation</h3>
+                        <p>Craft compelling essays, gather documents, and submit applications</p>
+                        <span class="timeline-duration">Weeks 4-8</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Offer & Acceptance</h3>
+                        <p>Review offers, negotiate scholarships, and accept your best option</p>
+                        <span class="timeline-duration">Weeks 12-16</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h3>Visa Application</h3>
+                        <p>Complete visa paperwork, prepare for interviews, and secure your visa</p>
+                        <span class="timeline-duration">Weeks 16-20</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">6</div>
+                    <div class="timeline-content">
+                        <h3>Pre-Departure & Arrival</h3>
+                        <p>Arrange accommodation, book flights, and settle into your new home</p>
+                        <span class="timeline-duration">Weeks 20-24</span>
+                    </div>
+                </div>
+            </div>
+            <div class="process-cta">
+                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn btn-primary btn-large" target="_blank">Start Your Timeline Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarship Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Scholarship Resources</h2>
+                <p class="section-description">Find funding opportunities to make your dream affordable</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">🎓</div>
+                    <h3>Government Scholarships</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.chevening.org/" target="_blank">Chevening Scholarships (UK)</a></li>
+                        <li><a href="https://www.scholarships.gc.ca/" target="_blank">Canadian Commonwealth Scholarship</a></li>
+                        <li><a href="https://www.fulbrightonline.org/" target="_blank">Fulbright Program (USA)</a></li>
+                        <li><a href="https://www.daad.de/en/" target="_blank">DAAD Scholarships (Germany)</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🏫</div>
+                    <h3>University Scholarships</h3>
+                    <ul class="resource-list">
+                        <li><a href="#" target="_blank">Merit-based scholarships</a></li>
+                        <li><a href="#" target="_blank">International student awards</a></li>
+                        <li><a href="#" target="_blank">Research assistantships</a></li>
+                        <li><a href="#" target="_blank">Athletic scholarships</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🌍</div>
+                    <h3>External Funding</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.iie.org/" target="_blank">IIE Scholarships</a></li>
+                        <li><a href="https://www.internationalscholarships.com/" target="_blank">International Scholarships Database</a></li>
+                        <li><a href="https://www.scholarshipportal.com/" target="_blank">Scholarship Portal</a></li>
+                        <li><a href="#" target="_blank">Private foundations & trusts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resources-help">
+                <div class="help-card">
+                    <h3>Need Help Finding Scholarships?</h3>
+                    <p>Our team can help you identify scholarships you qualify for and guide you through the application process.</p>
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn btn-primary" target="_blank">Get Scholarship Guidance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Quick answers to common questions</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does the application process take?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The complete process from initial consultation to visa approval typically takes 4-6 months. However, this can vary based on your chosen destination, program start date, and individual circumstances. We recommend starting at least 8-12 months before your intended start date.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What are your service fees?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our fees vary depending on the destination and level of support you need. We offer flexible packages from basic application assistance to comprehensive end-to-end support. Contact us for a personalized quote based on your specific requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need IELTS/TOEFL for all countries?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most English-speaking countries require proof of English proficiency through IELTS, TOEFL, or PTE. However, some universities offer waivers if you've completed previous education in English. We can help determine your specific requirements and prepare you for these tests.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I work while studying?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Most countries allow international students to work part-time during their studies (typically 20 hours per week during term time). Work rights vary by country - Canada, UK, Ireland, and Australia offer the most flexible work opportunities for students.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is your visa success rate?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We maintain a 98% visa success rate across all destinations. Our experienced team ensures every application is thoroughly prepared with complete documentation and proper guidance for visa interviews, maximizing your chances of approval.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you help with accommodation?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our post-arrival support includes helping you find suitable accommodation, whether on-campus residence or off-campus housing. We provide guidance on neighborhoods, budgeting, and connecting with other students.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What documents do I need to apply?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Typical requirements include: academic transcripts, English proficiency test scores, statement of purpose, letters of recommendation, CV/resume, passport copy, and financial documents. Specific requirements vary by country and institution - we'll provide you with a detailed checklist.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I bring my family with me?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Many countries allow you to bring dependents (spouse and children) on a dependent visa. Requirements and work rights for dependents vary by country. Canada, UK, and Australia are particularly family-friendly for international students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories From Our Students</h2>
+                <p class="section-description">See what our students are sharing on social media</p>
+            </div>
+            <div class="social-feeds">
+                <div class="social-feed">
+                    <div class="social-header">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 0C7.164 0 0 7.164 0 16c0 7.985 5.851 14.604 13.5 15.812v-11.19H9.437V16h4.063v-3.52c0-4.01 2.389-6.225 6.043-6.225 1.751 0 3.582.313 3.582.313v3.937h-2.018c-1.987 0-2.607 1.233-2.607 2.498V16h4.437l-.709 4.622h-3.728v11.19C26.149 30.604 32 23.985 32 16c0-8.836-7.164-16-16-16z" fill="#1877F2"/>
+                        </svg>
+                        <span>Facebook</span>
+                    </div>
+                    <p class="social-embed-text">Follow our Facebook page for daily tips, success stories, and live Q&A sessions</p>
+                    <a href="https://www.facebook.com/thestudyabroadconsultant" class="btn btn-secondary" target="_blank">Visit Our Facebook</a>
+                </div>
+                <div class="social-feed">
+                    <div class="social-header">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <defs>
+                                <radialGradient id="ig-gradient" cx="30%" cy="107%">
+                                    <stop offset="0%" style="stop-color:#FFD521" />
+                                    <stop offset="5%" style="stop-color:#FFD521" />
+                                    <stop offset="50%" style="stop-color:#F50000" />
+                                    <stop offset="95%" style="stop-color:#B900B4" />
+                                    <stop offset="100%" style="stop-color:#B900B4" />
+                                </radialGradient>
+                            </defs>
+                            <path d="M16 2.88c4.275 0 4.781.016 6.469.093 1.563.071 2.406.331 2.969.55.75.291 1.281.638 1.844 1.2.562.563.909 1.094 1.2 1.844.219.563.479 1.406.55 2.969.077 1.688.093 2.194.093 6.469s-.016 4.781-.093 6.469c-.071 1.563-.331 2.406-.55 2.969-.291.75-.638 1.281-1.2 1.844-.563.562-1.094.909-1.844 1.2-.563.219-1.406.479-2.969.55-1.688.077-2.194.093-6.469.093s-4.781-.016-6.469-.093c-1.563-.071-2.406-.331-2.969-.55-.75-.291-1.281-.638-1.844-1.2-.562-.563-.909-1.094-1.2-1.844-.219-.563-.479-1.406-.55-2.969C2.896 20.781 2.88 20.275 2.88 16s.016-4.781.093-6.469c.071-1.563.331-2.406.55-2.969.291-.75.638-1.281 1.2-1.844.563-.562 1.094-.909 1.844-1.2.563-.219 1.406-.479 2.969-.55C11.219 2.896 11.725 2.88 16 2.88M16 0c-4.344 0-4.888.018-6.594.096-1.7.078-2.862.35-3.881.744-1.05.406-1.944.956-2.831 1.844C1.806 3.571 1.256 4.465.85 5.515c-.394 1.019-.666 2.181-.744 3.881C.018 11.112 0 11.656 0 16s.018 4.888.096 6.594c.078 1.7.35 2.862.744 3.881.406 1.05.956 1.944 1.844 2.831.887.888 1.781 1.438 2.831 1.844 1.019.394 2.181.666 3.881.744C11.112 31.982 11.656 32 16 32s4.888-.018 6.594-.096c1.7-.078 2.862-.35 3.881-.744 1.05-.406 1.944-.956 2.831-1.844.888-.887 1.438-1.781 1.844-2.831.394-1.019.666-2.181.744-3.881.078-1.706.096-2.25.096-6.594s-.018-4.888-.096-6.594c-.078-1.7-.35-2.862-.744-3.881-.406-1.05-.956-1.944-1.844-2.831-.887-.888-1.781-1.438-2.831-1.844-1.019-.394-2.181-.666-3.881-.744C20.888.018 20.344 0 16 0z" fill="url(#ig-gradient)"/>
+                            <path d="M16 7.784c-4.538 0-8.216 3.678-8.216 8.216 0 4.538 3.678 8.216 8.216 8.216 4.538 0 8.216-3.678 8.216-8.216 0-4.538-3.678-8.216-8.216-8.216zm0 13.55c-2.944 0-5.334-2.39-5.334-5.334 0-2.944 2.39-5.334 5.334-5.334 2.944 0 5.334 2.39 5.334 5.334 0 2.944-2.39 5.334-5.334 5.334z" fill="url(#ig-gradient)"/>
+                            <circle cx="24.54" cy="7.46" r="1.92" fill="url(#ig-gradient)"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </div>
+                    <p class="social-embed-text">Watch student testimonials, behind-the-scenes content, and daily study abroad tips</p>
+                    <a href="https://www.instagram.com/thestudyabroadconsultant" class="btn btn-secondary" target="_blank">Follow on Instagram</a>
+                </div>
+                <div class="social-feed">
+                    <div class="social-header">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 0C7.164 0 0 7.164 0 16c0 8.836 7.164 16 16 16s16-7.164 16-16c0-8.836-7.164-16-16-16zm5.894 12.404c.006.176.009.353.009.531 0 5.434-4.135 11.691-11.691 11.691-2.323 0-4.481-.68-6.297-1.847.321.038.648.057.979.057 1.923 0 3.692-.656 5.097-1.757-1.796-.033-3.312-1.219-3.834-2.85.25.048.507.073.772.073.374 0 .737-.05 1.082-.144-1.878-.377-3.293-2.037-3.293-4.026v-.052c.554.308 1.186.494 1.86.515-1.102-.736-1.826-1.993-1.826-3.419 0-.753.203-1.46.557-2.067 2.024 2.484 5.048 4.117 8.458 4.287-.07-.301-.106-.615-.106-.938 0-2.273 1.843-4.116 4.116-4.116 1.184 0 2.253.5 3.004 1.3.937-.184 1.818-.527 2.612-.998-.307.96-.959 1.766-1.808 2.275.832-.1 1.625-.321 2.364-.649-.551.825-1.249 1.55-2.053 2.131z" fill="#1DA1F2"/>
+                        </svg>
+                        <span>TikTok</span>
+                    </div>
+                    <p class="social-embed-text">Quick tips, student experiences, and fun educational content about studying abroad</p>
+                    <a href="https://www.tiktok.com/@thestudyabroadconsultant" class="btn btn-secondary" target="_blank">Follow on TikTok</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Journey?</h2>
+                <p class="cta-description">Join 1,500+ students who've successfully studied abroad with our guidance</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn btn-primary btn-large" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                    <a href="mailto:info@thestudyabroadconsultant.ca" class="btn btn-secondary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                        </svg>
+                        Send an Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">The Study Abroad Consultant</h3>
+                    <p class="footer-description">Your trusted partner in achieving global education dreams. With over 10 years of experience and 1,500+ successful placements.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/thestudyabroadconsultant" target="_blank" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/thestudyabroadconsultant" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@thestudyabroadconsultant" target="_blank" aria-label="TikTok">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@thestudyabroadconsultant" target="_blank" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                            </svg>
+                            <a href="mailto:info@thestudyabroadconsultant.ca">info@thestudyabroadconsultant.ca</a>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                            </svg>
+                            <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Study Abroad Consultant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cost Calculator Data
+        const costData = {
+            canada: {
+                undergraduate: { tuition: [13000, 30000], living: [10000, 15000] },
+                postgraduate: { tuition: [15000, 35000], living: [10000, 15000] }
+            },
+            uk: {
+                undergraduate: { tuition: [10000, 25000], living: [12000, 15000] },
+                postgraduate: { tuition: [12000, 38000], living: [12000, 15000] }
+            },
+            usa: {
+                undergraduate: { tuition: [20000, 50000], living: [15000, 25000] },
+                postgraduate: { tuition: [25000, 55000], living: [15000, 25000] }
+            },
+            ireland: {
+                undergraduate: { tuition: [9000, 20000], living: [10000, 12000] },
+                postgraduate: { tuition: [10000, 25000], living: [10000, 12000] }
+            },
+            germany: {
+                undergraduate: { tuition: [0, 15000], living: [10000, 12000] },
+                postgraduate: { tuition: [0, 20000], living: [10000, 12000] }
+            },
+            australia: {
+                undergraduate: { tuition: [20000, 40000], living: [21000, 27000] },
+                postgraduate: { tuition: [22000, 45000], living: [21000, 27000] }
+            }
+        };
+
+        const currencySymbols = {
+            canada: 'CAD',
+            uk: '£',
+            usa: 'USD',
+            ireland: '€',
+            germany: '€',
+            australia: 'AUD'
+        };
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Destination Tabs
+        const destinationTabs = document.querySelectorAll('.destination-tab');
+        const destinationPanels = document.querySelectorAll('.destination-panel');
+
+        destinationTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const country = tab.dataset.country;
+                
+                destinationTabs.forEach(t => t.classList.remove('active'));
+                destinationPanels.forEach(p => p.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const activePanel = document.querySelector(`.destination-panel[data-country="${country}"]`);
+                if (activePanel) {
+                    activePanel.classList.add('active');
+                }
+            });
+        });
+
+        // Cost Calculator
+        const calcCountry = document.getElementById('calc-country');
+        const calcProgram = document.getElementById('calc-program');
+        const calcDuration = document.getElementById('calc-duration');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const calculatorResult = document.getElementById('calculator-result');
+        const resultTuition = document.getElementById('result-tuition');
+        const resultLiving = document.getElementById('result-living');
+        const resultTotal = document.getElementById('result-total');
+
+        if (calculateBtn) {
+            calculateBtn.addEventListener('click', () => {
+                const country = calcCountry.value;
+                const program = calcProgram.value;
+                const duration = parseInt(calcDuration.value);
+                
+                if (!country || !program || !duration) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                const data = costData[country][program];
+                const currency = currencySymbols[country];
+                
+                const avgTuition = (data.tuition[0] + data.tuition[1]) / 2;
+                const avgLiving = (data.living[0] + data.living[1]) / 2;
+                
+                const totalTuition = avgTuition * duration;
+                const totalLiving = avgLiving * duration;
+                const total = totalTuition + totalLiving;
+                
+                const formatNumber = (num) => {
+                    return Math.round(num).toLocaleString();
+                };
+                
+                resultTuition.textContent = `${currency} ${formatNumber(totalTuition)}`;
+                resultLiving.textContent = `${currency} ${formatNumber(totalLiving)}`;
+                resultTotal.textContent = `${currency} ${formatNumber(total)}`;
+                
+                calculatorResult.style.display = 'block';
+                calculatorResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        }
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                faqItems.forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .resource-card, .timeline-item, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
