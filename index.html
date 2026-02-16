@@ -1153,6 +1153,43 @@
             color: var(--neutral-400);
         }
 
+        .footer-credits {
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-sm);
+        }
+
+        .footer-credits p {
+            font-size: 0.9rem;
+            color: var(--neutral-400);
+        }
+
+        .dotx-link {
+            color: var(--primary-blue-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .dotx-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue-light);
+            transition: width 0.3s ease;
+        }
+
+        .dotx-link:hover {
+            color: var(--white);
+        }
+
+        .dotx-link:hover::after {
+            width: 100%;
+        }
+
         /* Loan Resources Section */
         .loan-resources {
             background: var(--neutral-100);
@@ -3089,7 +3126,7 @@
                         </svg>
                         Chat on WhatsApp
                     </a>
-                    <a href="mailto:info@thestudyabroadconsultant.ca" class="btn btn-secondary btn-large">
+                    <a href="mailto:cc.canadastudyadvisor@gmail.com" class="btn btn-secondary btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                         </svg>
@@ -3141,7 +3178,7 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                             </svg>
-                            <a href="mailto:info@thestudyabroadconsultant.ca">info@thestudyabroadconsultant.ca</a>
+                            <a href="mailto:cc.canadastudyadisor@gmail.com">cc.canadastudyadisor@gmail.com</a>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -3154,6 +3191,9 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 The Study Abroad Consultant. All rights reserved.</p>
+                <div class="footer-credits">
+                    <p>Website by <a href="https://dotxlabs.com" target="_blank" rel="noopener" class="dotx-link">DOTxLabs</a> - AI-Powered Digital Solutions</p>
+                </div>
             </div>
         </div>
     </footer>
