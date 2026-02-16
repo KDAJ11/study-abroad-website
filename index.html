@@ -1430,6 +1430,61 @@
             font-weight: 700;
         }
 
+        /* Mobile-friendly comparison cards */
+        .mobile-comparison {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table table {
+                display: none;
+            }
+
+            .mobile-comparison {
+                display: block;
+            }
+
+            .comparison-card {
+                background: var(--white);
+                padding: var(--spacing-md);
+                border-radius: var(--radius-lg);
+                margin-bottom: var(--spacing-md);
+                box-shadow: var(--shadow-sm);
+            }
+
+            .comparison-card h4 {
+                font-family: var(--font-display);
+                font-size: 1.1rem;
+                color: var(--neutral-900);
+                margin-bottom: var(--spacing-sm);
+                padding-bottom: var(--spacing-sm);
+                border-bottom: 2px solid var(--primary-blue);
+            }
+
+            .comparison-row {
+                display: grid;
+                grid-template-columns: 40% 60%;
+                gap: var(--spacing-sm);
+                padding: var(--spacing-sm) 0;
+                border-bottom: 1px solid var(--neutral-200);
+            }
+
+            .comparison-row:last-child {
+                border-bottom: none;
+            }
+
+            .comparison-label {
+                font-weight: 600;
+                color: var(--neutral-700);
+                font-size: 0.9rem;
+            }
+
+            .comparison-value {
+                color: var(--neutral-800);
+                font-size: 0.9rem;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-container {
@@ -1450,8 +1505,36 @@
                 grid-template-columns: 1fr;
             }
 
+            .loan-tabs {
+                gap: var(--spacing-xs);
+            }
+
+            .loan-tab {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+
             .providers-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .loan-info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .comparison-table table {
+                min-width: 600px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                font-size: 0.85rem;
+                padding: var(--spacing-sm);
             }
             
             .resources-grid,
@@ -1539,6 +1622,68 @@
             
             .breakdown-item.total {
                 padding: var(--spacing-md);
+            }
+
+            /* Loan Resources Mobile Optimizations */
+            .loan-calculator-card {
+                padding: var(--spacing-md);
+            }
+
+            .loan-calculator-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .loan-result-value {
+                font-size: 1.5rem;
+            }
+
+            .loan-step {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .loan-step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+
+            .loan-step-content h4 {
+                font-size: 1.1rem;
+            }
+
+            .provider-card {
+                padding: var(--spacing-md);
+            }
+
+            .provider-name {
+                font-size: 1.25rem;
+            }
+
+            .detail-row {
+                font-size: 0.85rem;
+                gap: var(--spacing-xs);
+            }
+
+            .detail-label,
+            .detail-value {
+                font-size: 0.85rem;
+            }
+
+            .loan-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .loan-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .loan-tab {
+                flex-shrink: 0;
+                white-space: nowrap;
             }
             
             .timeline {
@@ -2503,6 +2648,7 @@
 
             <!-- Comparison Panel -->
             <div id="comparison" class="loan-panel">
+                <!-- Desktop Table View -->
                 <div class="comparison-table">
                     <table>
                         <thead>
@@ -2550,6 +2696,73 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <!-- Mobile Card View -->
+                    <div class="mobile-comparison">
+                        <div class="comparison-card">
+                            <h4>Student Loans</h4>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Cost</div>
+                                <div class="comparison-value">Must be repaid with interest</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Availability</div>
+                                <div class="comparison-value"><span class="feature-check">✓</span> Widely available</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Speed</div>
+                                <div class="comparison-value"><span class="feature-check">✓</span> Quick (2-4 weeks)</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Amount</div>
+                                <div class="comparison-value"><span class="feature-check">✓</span> Can cover full costs</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Requirements</div>
+                                <div class="comparison-value">Admission letter, financial docs</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Flexibility</div>
+                                <div class="comparison-value"><span class="feature-check">✓</span> Any approved expenses</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Long-term</div>
+                                <div class="comparison-value">Debt after graduation</div>
+                            </div>
+                        </div>
+
+                        <div class="comparison-card">
+                            <h4>Scholarships</h4>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Cost</div>
+                                <div class="comparison-value"><span class="feature-check">✓</span> Free money - no repayment</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Availability</div>
+                                <div class="comparison-value">Competitive, limited spots</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Speed</div>
+                                <div class="comparison-value">Long cycles (3-6 months)</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Amount</div>
+                                <div class="comparison-value">Often partial funding</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Requirements</div>
+                                <div class="comparison-value">High GPA, essays, achievements</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Flexibility</div>
+                                <div class="comparison-value">May have usage restrictions</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-label">Long-term</div>
+                                <div class="comparison-value"><span class="feature-check">✓</span> No financial obligation</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="loan-info-cards">
