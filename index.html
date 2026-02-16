@@ -1151,6 +1151,285 @@
             color: var(--neutral-400);
         }
 
+        /* Loan Resources Section */
+        .loan-resources {
+            background: var(--neutral-100);
+        }
+
+        .loan-tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .loan-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border: 2px solid var(--neutral-200);
+            border-radius: var(--radius-lg);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--neutral-700);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .loan-tab:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .loan-tab.active {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .loan-panel {
+            display: none;
+        }
+
+        .loan-panel.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .loan-calculator-card {
+            background: var(--white);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .loan-calc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .loan-results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .loan-results-grid.show {
+            opacity: 1;
+        }
+
+        .loan-result-card {
+            background: var(--neutral-100);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .loan-result-label {
+            font-size: 0.9rem;
+            color: var(--neutral-700);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .loan-result-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .provider-card {
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .provider-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-left-color: var(--accent-orange);
+        }
+
+        .provider-category {
+            display: inline-block;
+            background: var(--neutral-100);
+            color: var(--primary-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .provider-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .provider-details {
+            margin-top: var(--spacing-md);
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--neutral-700);
+            font-size: 0.95rem;
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+        }
+
+        .loan-guide-steps {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .loan-step {
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .loan-step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .loan-step-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .loan-step-content ul {
+            margin-left: var(--spacing-md);
+            color: var(--neutral-700);
+        }
+
+        .loan-step-content li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .loan-info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .loan-info-card {
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--accent-orange);
+        }
+
+        .loan-info-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--neutral-900);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .loan-info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .loan-info-card li {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            color: var(--neutral-700);
+        }
+
+        .loan-info-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+
+        .comparison-table {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: var(--spacing-md);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--neutral-100);
+        }
+
+        .feature-check {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-container {
@@ -1164,6 +1443,15 @@
             
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .loan-calc-grid,
+            .loan-results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .providers-grid {
+                grid-template-columns: 1fr;
             }
             
             .resources-grid,
@@ -1375,6 +1663,7 @@
             <div class="nav-menu">
                 <a href="#destinations" class="nav-link">Destinations</a>
                 <a href="#services" class="nav-link">Services</a>
+                <a href="#loan-resources" class="nav-link">Loan Resources</a>
                 <a href="#process" class="nav-link">Process</a>
                 <a href="#resources" class="nav-link">Resources</a>
                 <a href="#faq" class="nav-link">FAQ</a>
@@ -1415,7 +1704,7 @@
                         </svg>
                         Start Your Journey
                     </a>
-                    <a href="mailto:cc.canadastudyadvisor@gmail.com" class="btn btn-secondary btn-large">
+                    <a href="/cdn-cgi/l/email-protection#791a1a571a1817181d180a0d0c1d00181d0f100a160b391e14181015571a1614" class="btn btn-secondary btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                         </svg>
@@ -1832,6 +2121,481 @@
         </div>
     </section>
 
+    <!-- Student Loan Resources Section -->
+    <section id="loan-resources" class="loan-resources">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Student Loan Resources</h2>
+                <p class="section-description">Comprehensive guidance on international and Nigerian student loans to fund your education</p>
+            </div>
+
+            <div class="loan-tabs">
+                <button class="loan-tab active" onclick="switchLoanTab('calculator')">Loan Calculator</button>
+                <button class="loan-tab" onclick="switchLoanTab('providers')">Loan Providers</button>
+                <button class="loan-tab" onclick="switchLoanTab('guide')">Application Guide</button>
+                <button class="loan-tab" onclick="switchLoanTab('comparison')">Loans vs Scholarships</button>
+            </div>
+
+            <!-- Loan Calculator Panel -->
+            <div id="calculator" class="loan-panel active">
+                <div class="loan-calculator-card">
+                    <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--neutral-900); margin-bottom: var(--spacing-md);">Calculate Loan Payments</h3>
+                    <p style="color: var(--neutral-700); margin-bottom: var(--spacing-lg);">Estimate your monthly payments and total cost of borrowing</p>
+                    
+                    <div class="loan-calc-grid">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount ($)</label>
+                            <input type="number" id="loanAmount" class="form-control" placeholder="50000" value="50000">
+                        </div>
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate (%)</label>
+                            <input type="number" id="interestRate" class="form-control" placeholder="7.5" value="7.5" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanTerm">Loan Term (Years)</label>
+                            <select id="loanTerm" class="form-control">
+                                <option value="5">5 years</option>
+                                <option value="10" selected>10 years</option>
+                                <option value="15">15 years</option>
+                                <option value="20">20 years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateLoan()">Calculate</button>
+
+                    <div class="loan-results-grid" id="loanResults">
+                        <div class="loan-result-card">
+                            <div class="loan-result-label">Monthly Payment</div>
+                            <div class="loan-result-value" id="monthlyPayment">$0</div>
+                        </div>
+                        <div class="loan-result-card">
+                            <div class="loan-result-label">Total Repayment</div>
+                            <div class="loan-result-value" id="totalRepayment">$0</div>
+                        </div>
+                        <div class="loan-result-card">
+                            <div class="loan-result-label">Total Interest</div>
+                            <div class="loan-result-value" id="totalInterest">$0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loan Providers Panel -->
+            <div id="providers" class="loan-panel">
+                <div style="margin-bottom: var(--spacing-lg);">
+                    <div class="loan-tabs">
+                        <button class="loan-tab active" onclick="switchProviderTab('international')">International Loans</button>
+                        <button class="loan-tab" onclick="switchProviderTab('nigerian')">Nigerian Loans</button>
+                    </div>
+                </div>
+
+                <div id="international" class="loan-panel active">
+                    <div class="providers-grid">
+                        <div class="provider-card">
+                            <span class="provider-category">International</span>
+                            <h3 class="provider-name">Prodigy Finance</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">No co-signer required for international students at 150+ schools worldwide</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">7.99% - 13.49%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">Up to $150,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Co-signer</span>
+                                    <span class="detail-value">Not Required</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Countries</span>
+                                    <span class="detail-value">USA, UK, Canada, EU</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="provider-card">
+                            <span class="provider-category">International</span>
+                            <h3 class="provider-name">MPower Financing</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Loans for international students in USA & Canada without co-signers</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">8.99% - 14.99%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">Up to $100,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Co-signer</span>
+                                    <span class="detail-value">Not Required</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Countries</span>
+                                    <span class="detail-value">USA, Canada</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="provider-card">
+                            <span class="provider-category">International</span>
+                            <h3 class="provider-name">Sallie Mae</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">For US citizens or international students with US co-signer</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">4.50% - 12.99%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">100% of school costs</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Co-signer</span>
+                                    <span class="detail-value">Required for intl</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Countries</span>
+                                    <span class="detail-value">USA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="provider-card">
+                            <span class="provider-category">International</span>
+                            <h3 class="provider-name">Discover Student Loans</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Competitive rates with US-based co-signer requirement</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">4.99% - 13.49%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">100% of school costs</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Co-signer</span>
+                                    <span class="detail-value">Required (US-based)</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Countries</span>
+                                    <span class="detail-value">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="nigerian" class="loan-panel">
+                    <div class="providers-grid">
+                        <div class="provider-card">
+                            <span class="provider-category">Nigerian</span>
+                            <h3 class="provider-name">Sterling Bank Education Loan</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Flexible education loans for Nigerian students studying abroad</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">18% - 22%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Repayment Term</span>
+                                    <span class="detail-value">Up to 5 years</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Requirements</span>
+                                    <span class="detail-value">Admission, Guarantor</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="provider-card">
+                            <span class="provider-category">Nigerian</span>
+                            <h3 class="provider-name">Access Bank Student Loan</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Student loans for Nigerian students at home and abroad</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">15% - 20%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">₦15,000,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Repayment Term</span>
+                                    <span class="detail-value">Up to 6 years</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Requirements</span>
+                                    <span class="detail-value">Admission, Collateral</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="provider-card">
+                            <span class="provider-category">Nigerian</span>
+                            <h3 class="provider-name">NIRSAL Student Loan</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Government-backed loans for agriculture students</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">9% - 12%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">₦5,000,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Repayment Term</span>
+                                    <span class="detail-value">Up to 7 years</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Requirements</span>
+                                    <span class="detail-value">Field of study, Guarantor</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="provider-card">
+                            <span class="provider-category">Nigerian</span>
+                            <h3 class="provider-name">First Bank Education Loan</h3>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Education financing for undergraduate and postgraduate studies</p>
+                            <div class="provider-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Interest Rate</span>
+                                    <span class="detail-value">16% - 21%</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Amount</span>
+                                    <span class="detail-value">₦12,000,000</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Repayment Term</span>
+                                    <span class="detail-value">Up to 5 years</span>
+                                </div>
+                                <div class="detail-row" style="border-bottom: none;">
+                                    <span class="detail-label">Requirements</span>
+                                    <span class="detail-value">Admission, Income proof</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Guide Panel -->
+            <div id="guide" class="loan-panel">
+                <div class="loan-guide-steps">
+                    <div class="loan-step">
+                        <div class="loan-step-number">1</div>
+                        <div class="loan-step-content">
+                            <h4>Research & Compare Options</h4>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Start by understanding which loans you're eligible for</p>
+                            <ul>
+                                <li>Review interest rates and repayment terms</li>
+                                <li>Check eligibility requirements (citizenship, co-signer needs)</li>
+                                <li>Calculate total borrowing costs using our calculator</li>
+                                <li>Prioritize loans with favorable grace periods</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="loan-step">
+                        <div class="loan-step-number">2</div>
+                        <div class="loan-step-content">
+                            <h4>Gather Required Documents</h4>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Prepare all necessary documentation</p>
+                            <ul>
+                                <li><strong>Admission Letter:</strong> Official acceptance from university</li>
+                                <li><strong>Proof of Identity:</strong> International passport, national ID</li>
+                                <li><strong>Financial Documents:</strong> Bank statements (3-6 months)</li>
+                                <li><strong>Academic Records:</strong> Transcripts, test scores</li>
+                                <li><strong>Co-signer Documents:</strong> If required - income proof, credit report</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="loan-step">
+                        <div class="loan-step-number">3</div>
+                        <div class="loan-step-content">
+                            <h4>Submit Your Application</h4>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Complete the application accurately</p>
+                            <ul>
+                                <li>Fill out online application forms completely</li>
+                                <li>Double-check all information for accuracy</li>
+                                <li>Upload clear, legible copies of all documents</li>
+                                <li>Submit 2-3 months before semester starts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="loan-step">
+                        <div class="loan-step-number">4</div>
+                        <div class="loan-step-content">
+                            <h4>Await Approval & Review Terms</h4>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Timeline: Most lenders respond within 2-4 weeks</p>
+                            <ul>
+                                <li>Check email regularly for lender communications</li>
+                                <li>Respond promptly to requests for additional information</li>
+                                <li>Review approved loan terms carefully before accepting</li>
+                                <li>Understand disbursement schedules and grace periods</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="loan-step">
+                        <div class="loan-step-number">5</div>
+                        <div class="loan-step-content">
+                            <h4>Accept Loan & Complete Certification</h4>
+                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Finalize your loan agreement</p>
+                            <ul>
+                                <li>Sign the Master Promissory Note (MPN)</li>
+                                <li>Complete entrance counseling if required</li>
+                                <li>Coordinate with school's financial aid office</li>
+                                <li>Confirm disbursement dates align with tuition deadlines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loan-info-cards">
+                    <div class="loan-info-card">
+                        <h4>Timeline Expectations</h4>
+                        <ul>
+                            <li><strong>Research:</strong> 2-3 weeks</li>
+                            <li><strong>Document Prep:</strong> 1-2 weeks</li>
+                            <li><strong>Application:</strong> 1-2 days</li>
+                            <li><strong>Approval:</strong> 2-4 weeks</li>
+                            <li><strong>Disbursement:</strong> 1-2 weeks</li>
+                        </ul>
+                    </div>
+
+                    <div class="loan-info-card">
+                        <h4>Common Rejection Reasons</h4>
+                        <ul>
+                            <li>Incomplete documentation</li>
+                            <li>Poor or no credit history</li>
+                            <li>High debt-to-income ratio</li>
+                            <li>Unaccredited institution</li>
+                            <li>Non-eligible program</li>
+                        </ul>
+                    </div>
+
+                    <div class="loan-info-card">
+                        <h4>Pro Tips</h4>
+                        <ul>
+                            <li>Apply to multiple lenders</li>
+                            <li>Start 4-6 months before enrollment</li>
+                            <li>Build credit early if possible</li>
+                            <li>Consider part-time work</li>
+                            <li>Explore scholarships first</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Panel -->
+            <div id="comparison" class="loan-panel">
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>Student Loans</th>
+                                <th>Scholarships</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cost</strong></td>
+                                <td>Must be repaid with interest</td>
+                                <td><span class="feature-check">✓</span> Free money - no repayment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Availability</strong></td>
+                                <td><span class="feature-check">✓</span> Widely available</td>
+                                <td>Competitive, limited spots</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Speed</strong></td>
+                                <td><span class="feature-check">✓</span> Quick approval (2-4 weeks)</td>
+                                <td>Long cycles (3-6 months)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Amount</strong></td>
+                                <td><span class="feature-check">✓</span> Can cover full costs</td>
+                                <td>Often partial funding</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Requirements</strong></td>
+                                <td>Admission letter, financial docs</td>
+                                <td>High GPA, essays, achievements</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Flexibility</strong></td>
+                                <td><span class="feature-check">✓</span> Use for any approved expenses</td>
+                                <td>May have usage restrictions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Long-term Impact</strong></td>
+                                <td>Debt burden after graduation</td>
+                                <td><span class="feature-check">✓</span> No financial obligation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="loan-info-cards">
+                    <div class="loan-info-card">
+                        <h4>When to Prioritize Scholarships</h4>
+                        <ul>
+                            <li>Strong academic record (3.5+ GPA)</li>
+                            <li>6+ months before enrollment</li>
+                            <li>Unique achievements or background</li>
+                            <li>Schools with generous aid</li>
+                            <li>Want to minimize debt</li>
+                        </ul>
+                    </div>
+
+                    <div class="loan-info-card">
+                        <h4>When Loans Make Sense</h4>
+                        <ul>
+                            <li>Enrollment deadline approaching</li>
+                            <li>Need guaranteed funding now</li>
+                            <li>Scholarships don't cover full costs</li>
+                            <li>Clear ROI from your degree</li>
+                            <li>Want predictable funding</li>
+                        </ul>
+                    </div>
+
+                    <div class="loan-info-card">
+                        <h4>Optimal Strategy: Combine Both</h4>
+                        <ul>
+                            <li>Apply for scholarships first</li>
+                            <li>Calculate your funding gap</li>
+                            <li>Use loans to bridge costs</li>
+                            <li>Keep applying while enrolled</li>
+                            <li>Consider part-time work</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--spacing-xl); padding: var(--spacing-xl); background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
+                    <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--neutral-900); margin-bottom: var(--spacing-md);">Need Personalized Loan Guidance?</h3>
+                    <p style="color: var(--neutral-700); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">Our expert consultants can help you navigate the loan process and find the best funding options for your unique situation.</p>
+                    <a href="https://wa.me/2348187861554" class="btn btn-primary btn-large" target="_blank">Get Loan Guidance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Application Process Section -->
     <section id="process" class="process">
         <div class="container">
@@ -2110,7 +2874,7 @@
                         </svg>
                         Chat on WhatsApp
                     </a>
-                    <a href="mailto:cc.canadastudyadvisor@gmail.com" class="btn btn-secondary btn-large">
+                    <a href="/cdn-cgi/l/email-protection#482b2b662b2926292c293b3c3d2c31292c3e213b273a082f25292124662b2725" class="btn btn-secondary btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                         </svg>
@@ -2162,7 +2926,7 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                             </svg>
-                            <a href="mailto:cc.canadastudyadvisor@gmail.com">cc.canadastudyadvisor@gmail.com</a>
+                            <a href="/cdn-cgi/l/email-protection#5e3d3d703d3f303f3a3f2d2a2b3a273f3a28372d312c1e39333f3732703d3133"><span class="__cf_email__" data-cfemail="dbb8b8f5b8bab5babfbaa8afaebfa2babfadb2a8b4a99bbcb6bab2b7f5b8b4b6">[email&#160;protected]</span></a>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -2179,7 +2943,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Cost Calculator Data
         const costData = {
             canada: {
@@ -2359,13 +3123,64 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+              }, observerOptions);
 
-        document.querySelectorAll('.service-card, .resource-card, .timeline-item, .faq-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Loan Calculator Functions
+        function calculateLoan() {
+            const principal = parseFloat(document.getElementById('loanAmount').value);
+            const annualRate = parseFloat(document.getElementById('interestRate').value) / 100;
+            const years = parseInt(document.getElementById('loanTerm').value);
+            
+            const monthlyRate = annualRate / 12;
+            const numberOfPayments = years * 12;
+            
+            const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                                   (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            
+            const totalRepayment = monthlyPayment * numberOfPayments;
+            const totalInterest = totalRepayment - principal;
+            
+            document.getElementById('monthlyPayment').textContent = '$' + monthlyPayment.toFixed(2);
+            document.getElementById('totalRepayment').textContent = '$' + totalRepayment.toFixed(2);
+            document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(2);
+            
+            document.getElementById('loanResults').classList.add('show');
+        }
+
+        // Loan Tab Switching
+        function switchLoanTab(tabName) {
+            document.querySelectorAll('.loan-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.loan-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Provider Tab Switching
+        function switchProviderTab(tabName) {
+            const providersSection = document.getElementById('providers');
+            providersSection.querySelectorAll('.loan-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            event.target.parentElement.querySelectorAll('.loan-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            providersSection.querySelector('#' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Calculate initial loan on page load
+        window.addEventListener('load', function() {
+            if (document.getElementById('loanAmount')) {
+                calculateLoan();
+            }
         });
     </script>
 </body>
