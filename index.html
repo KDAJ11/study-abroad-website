@@ -15,7 +15,9 @@
             --primary-blue: #0066CC;
             --primary-blue-dark: #004C99;
             --primary-blue-light: #3385DB;
-            --accent-orange: #FF6B35;
+            --accent-red: #C41E3A; /* Sophisticated deep red - UK/US/Canada flag inspired */
+            --accent-red-dark: #9E1830;
+            --accent-red-light: #E63E5A;
             --accent-green: #10B981;
             --neutral-100: #F8FAFC;
             --neutral-200: #E2E8F0;
@@ -241,6 +243,8 @@
         .btn-secondary:hover {
             background: var(--neutral-100);
             transform: translateY(-2px);
+            border-color: var(--accent-red);
+            color: var(--accent-red);
         }
 
         .btn-small {
@@ -272,7 +276,7 @@
             bottom: 0;
             background: 
                 radial-gradient(circle at 20% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 80% 80%, rgba(196, 30, 58, 0.05) 0%, transparent 50%);
             z-index: 0;
         }
 
@@ -315,7 +319,7 @@
         }
 
         .trust-badge svg {
-            color: var(--accent-orange);
+            color: var(--accent-red);
         }
 
         .hero-title {
@@ -365,6 +369,10 @@
             line-height: 1;
         }
 
+        .stat-number.highlight {
+            color: var(--accent-red);
+        }
+
         .stat-label {
             font-size: 0.9rem;
             color: var(--neutral-700);
@@ -392,6 +400,12 @@
             align-items: center;
             gap: var(--spacing-md);
             animation: float 3s ease-in-out infinite;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .hero-card:hover {
+            border-color: var(--accent-red);
         }
 
         @keyframes float {
@@ -419,6 +433,12 @@
 
         .card-icon {
             font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card:hover .card-icon {
+            transform: scale(1.1);
+            color: var(--accent-red);
         }
 
         .card-text {
@@ -472,7 +492,7 @@
         }
 
         .service-card:hover {
-            border-color: var(--primary-blue);
+            border-color: var(--accent-red);
             box-shadow: var(--shadow-lg);
             transform: translateY(-5px);
         }
@@ -480,6 +500,11 @@
         .service-icon {
             font-size: 3rem;
             margin-bottom: var(--spacing-md);
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--accent-red);
         }
 
         .service-title {
@@ -527,8 +552,8 @@
         }
 
         .destination-tab:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
+            border-color: var(--accent-red);
+            color: var(--accent-red);
         }
 
         .destination-tab.active {
@@ -619,7 +644,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-green);
+            color: var(--accent-red);
             font-weight: 700;
         }
 
@@ -683,7 +708,7 @@
 
         .form-control:focus {
             outline: none;
-            border-color: var(--primary-blue);
+            border-color: var(--accent-red);
         }
 
         #calculate-btn {
@@ -756,6 +781,11 @@
 
         .calculator-result .btn {
             width: 100%;
+        }
+
+        .calculator-result .btn-secondary:hover {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
         }
 
         /* Process Timeline */
@@ -856,6 +886,11 @@
         .resource-icon {
             font-size: 3rem;
             margin-bottom: var(--spacing-md);
+            transition: color 0.3s ease;
+        }
+
+        .resource-card:hover .resource-icon {
+            color: var(--accent-red);
         }
 
         .resource-card h3 {
@@ -881,7 +916,7 @@
         }
 
         .resource-list a:hover {
-            color: var(--primary-blue-dark);
+            color: var(--accent-red);
             text-decoration: underline;
         }
 
@@ -908,6 +943,15 @@
             font-size: 1.1rem;
             margin-bottom: var(--spacing-lg);
             opacity: 0.95;
+        }
+
+        .help-card .btn-primary {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .help-card .btn-primary:hover {
+            background: var(--neutral-100);
         }
 
         /* FAQ Section */
@@ -947,11 +991,17 @@
 
         .faq-question:hover {
             background: var(--neutral-100);
+            color: var(--accent-red);
         }
 
         .faq-icon {
             flex-shrink: 0;
             transition: transform 0.3s ease;
+            color: var(--primary-blue);
+        }
+
+        .faq-question:hover .faq-icon {
+            color: var(--accent-red);
         }
 
         .faq-item.active .faq-icon {
@@ -990,6 +1040,12 @@
             padding: var(--spacing-xl);
             border-radius: var(--radius-xl);
             text-align: center;
+            transition: border-color 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-feed:hover {
+            border-color: var(--accent-red);
         }
 
         .social-header {
@@ -998,6 +1054,14 @@
             justify-content: center;
             gap: var(--spacing-sm);
             margin-bottom: var(--spacing-md);
+        }
+
+        .social-header svg {
+            transition: transform 0.3s ease;
+        }
+
+        .social-feed:hover .social-header svg {
+            transform: scale(1.1);
         }
 
         .social-header span {
@@ -1011,6 +1075,11 @@
             color: var(--neutral-700);
             margin-bottom: var(--spacing-lg);
             line-height: 1.7;
+        }
+
+        .social-feed .btn-secondary:hover {
+            border-color: var(--accent-red);
+            color: var(--accent-red);
         }
 
         /* CTA Section */
@@ -1050,14 +1119,15 @@
         }
 
         .cta-section .btn-secondary {
-            background: var(--white);
+            background: transparent;
             border-color: var(--white);
-            color: var(--primary-blue);
+            color: var(--white);
         }
 
         .cta-section .btn-secondary:hover {
-            background: var(--neutral-100);
-            border-color: var(--neutral-100);
+            background: var(--white);
+            border-color: var(--white);
+            color: var(--accent-red);
         }
 
         /* Footer */
@@ -1104,7 +1174,7 @@
         }
 
         .social-links a:hover {
-            background: var(--primary-blue);
+            background: var(--accent-red);
             transform: translateY(-3px);
         }
 
@@ -1130,7 +1200,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--white);
+            color: var(--accent-red);
         }
 
         .footer-contact {
@@ -1145,7 +1215,7 @@
         }
 
         .footer-contact svg {
-            color: var(--primary-blue);
+            color: var(--accent-red);
         }
 
         .footer-contact a {
@@ -1155,7 +1225,7 @@
         }
 
         .footer-contact a:hover {
-            color: var(--white);
+            color: var(--accent-red);
         }
 
         .footer-bottom {
@@ -1176,7 +1246,7 @@
         }
 
         .dotx-link {
-            color: var(--primary-blue-light);
+            color: var(--accent-red);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -1190,7 +1260,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-blue-light);
+            background: var(--accent-red);
             transition: width 0.3s ease;
         }
 
@@ -1229,8 +1299,8 @@
         }
 
         .loan-tab:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
+            border-color: var(--accent-red);
+            color: var(--accent-red);
         }
 
         .loan-tab.active {
@@ -1314,7 +1384,7 @@
         .provider-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
-            border-left-color: var(--accent-orange);
+            border-left-color: var(--accent-red);
         }
 
         .provider-category {
@@ -1416,7 +1486,7 @@
             padding: var(--spacing-lg);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm);
-            border-top: 4px solid var(--accent-orange);
+            border-top: 4px solid var(--accent-red);
         }
 
         .loan-info-card h4 {
@@ -1442,7 +1512,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent-orange);
+            color: var(--accent-red);
             font-weight: 700;
         }
 
@@ -1477,7 +1547,7 @@
         }
 
         .feature-check {
-            color: var(--accent-green);
+            color: var(--accent-red);
             font-weight: 700;
         }
 
@@ -1509,7 +1579,7 @@
                 color: var(--neutral-900);
                 margin-bottom: var(--spacing-sm);
                 padding-bottom: var(--spacing-sm);
-                border-bottom: 2px solid var(--primary-blue);
+                border-bottom: 2px solid var(--accent-red);
             }
 
             .comparison-row {
@@ -1888,7 +1958,7 @@
                         </svg>
                         Start Your Journey
                     </a>
-                    <a href="/cdn-cgi/l/email-protection#791a1a571a1817181d180a0d0c1d00181d0f100a160b391e14181015571a1614" class="btn btn-secondary btn-large">
+                    <a href="/cdn-cgi/l/email-protection#bdd2ded6ccd9deccfdcbd9ced0cdc8d8d4cddac4c6d3ced8c8d5cfd2df93ded2d0" class="btn btn-secondary btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                         </svg>
@@ -1901,7 +1971,7 @@
                         <div class="stat-label">Students Placed</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">98%</div>
+                        <div class="stat-number highlight">98%</div>
                         <div class="stat-label">Visa Success Rate</div>
                     </div>
                     <div class="stat">
@@ -1972,7 +2042,7 @@
         </div>
     </section>
 
-    <!-- Destinations Section - UPDATED WITH NEW UNIVERSITIES -->
+    <!-- Destinations Section - UPDATED WITH NEW UNIVERSITIES AND NO FLAGS -->
     <section id="destinations" class="destinations">
         <div class="container">
             <div class="section-header">
@@ -1981,8 +2051,8 @@
             </div>
             <div class="destinations-tabs">
                 <button class="destination-tab active" data-country="canada">Canada</button>
-                <button class="destination-tab" data-country="uk">UK</button>
-                <button class="destination-tab" data-country="usa">USA</button>
+                <button class="destination-tab" data-country="uk">United Kingdom</button>
+                <button class="destination-tab" data-country="usa">United States</button>
                 <button class="destination-tab" data-country="ireland">Ireland</button>
                 <button class="destination-tab" data-country="germany">Germany</button>
                 <button class="destination-tab" data-country="australia">Australia</button>
@@ -2035,7 +2105,7 @@
                 <!-- UK -->
                 <div class="destination-panel" data-country="uk">
                     <div class="destination-info">
-                        <h3>Study in the UK</h3>
+                        <h3>Study in the United Kingdom</h3>
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="info-label">💰 Tuition Range</div>
@@ -2079,7 +2149,7 @@
                 <!-- USA -->
                 <div class="destination-panel" data-country="usa">
                     <div class="destination-info">
-                        <h3>Study in the USA</h3>
+                        <h3>Study in the United States</h3>
                         <div class="info-grid">
                             <div class="info-item">
                                 <div class="info-label">💰 Tuition Range</div>
@@ -3377,21 +3447,6 @@
                 }
             });
         });
-
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
 
         // Loan Calculator Functions
         function calculateLoan() {
