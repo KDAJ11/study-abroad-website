@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Study Abroad Consultant | Your Path to Global Education</title>
-    <meta name="description" content="Expert study abroad consulting for UK, Canada, USA, Ireland, Germany & Australia. 10+ years helping students achieve their dreams. Get started today.">
+    <meta name="description" content="Expert study abroad consulting for UK, Canada, USA, Ireland, Germany & Australia. 10+ years helping students achieve their dreams.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@6.6.6/css/flag-icons.min.css">
     
     <style>
         :root {
-            /* Trust-building color scheme with conversion optimization */
             --primary-blue: #0066CC;
             --primary-blue-dark: #004C99;
             --primary-blue-light: #3385DB;
-            --accent-red: #C41E3A; /* Sophisticated deep red - UK/US/Canada flag inspired */
+            --accent-red: #C41E3A;
             --accent-red-dark: #9E1830;
             --accent-red-light: #E63E5A;
             --accent-green: #10B981;
@@ -28,11 +28,9 @@
             --neutral-900: #0F172A;
             --white: #FFFFFF;
             
-            /* Typography */
             --font-display: 'Inter', serif;
             --font-body: 'Inter', sans-serif;
             
-            /* Spacing */
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
             --spacing-md: 1.5rem;
@@ -41,13 +39,11 @@
             --spacing-2xl: 4rem;
             --spacing-3xl: 6rem;
             
-            /* Shadows */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             
-            /* Border radius */
             --radius-sm: 0.375rem;
             --radius-md: 0.5rem;
             --radius-lg: 0.75rem;
@@ -85,11 +81,13 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid var(--neutral-200);
-            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--primary-blue), var(--accent-red), var(--primary-blue)) 1;
+            border-bottom-style: solid;
+            box-shadow: var(--shadow-md);
         }
 
         .nav-container {
@@ -102,10 +100,29 @@
         .logo {
             font-family: var(--font-display);
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-red) 50%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
             letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '●';
+            position: absolute;
+            bottom: -5px;
+            right: -15px;
+            color: var(--accent-red);
+            font-size: 12px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
         }
 
         .nav-menu {
@@ -121,16 +138,16 @@
         @media (max-width: 768px) {
             .nav-menu {
                 position: fixed;
-                top: 72px;
+                top: 80px;
                 left: 0;
                 right: 0;
                 background: var(--white);
                 flex-direction: column;
-                padding: var(--spacing-lg);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                padding: var(--spacing-xl);
+                box-shadow: var(--shadow-xl);
                 display: none;
                 z-index: 999;
-                border-top: 1px solid var(--neutral-200);
+                border-top: 3px solid var(--accent-red);
             }
 
             .nav-menu.active {
@@ -141,6 +158,7 @@
                 width: 100%;
                 padding: var(--spacing-sm) 0;
                 text-align: center;
+                font-size: 1.1rem;
             }
 
             .nav-menu .btn {
@@ -151,35 +169,38 @@
         .nav-link {
             color: var(--neutral-700);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.2s ease;
+            transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
 
-        .nav-link::after {
+        .nav-link::before {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
-            height: 2px;
-            background: var(--primary-blue);
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
             transition: width 0.3s ease;
+            border-radius: 3px;
         }
 
         .nav-link:hover {
-            color: var(--primary-blue);
+            color: var(--neutral-900);
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        .nav-link:hover::before {
+            width: 80%;
         }
 
         .mobile-menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
             background: none;
             border: none;
             cursor: pointer;
@@ -187,22 +208,24 @@
         }
 
         .mobile-menu-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--neutral-700);
+            width: 28px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
             transition: all 0.3s ease;
+            border-radius: 3px;
         }
 
         .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: rotate(45deg) translate(6px, 6px);
         }
         
         .mobile-menu-toggle.active span:nth-child(2) {
             opacity: 0;
+            transform: translateX(-10px);
         }
         
         .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
+            transform: rotate(-45deg) translate(7px, -8px);
         }
 
         /* Buttons */
@@ -210,50 +233,80 @@
             display: inline-flex;
             align-items: center;
             gap: var(--spacing-xs);
-            padding: 0.75rem 1.5rem;
+            padding: 0.85rem 2rem;
             border: none;
-            border-radius: var(--radius-lg);
+            border-radius: 50px;
             font-family: var(--font-body);
             font-weight: 600;
             font-size: 1rem;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
-            background: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
             color: var(--white);
-            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
         }
 
         .btn-primary:hover {
-            background: var(--primary-blue-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.4);
         }
 
         .btn-secondary {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(196, 30, 58, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
             color: var(--primary-blue);
             border: 2px solid var(--primary-blue);
         }
 
-        .btn-secondary:hover {
-            background: var(--neutral-100);
-            transform: translateY(-2px);
-            border-color: var(--accent-red);
-            color: var(--accent-red);
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: var(--white);
         }
 
         .btn-small {
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.5rem;
             font-size: 0.9rem;
         }
 
         .btn-large {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             font-size: 1.1rem;
         }
 
@@ -263,9 +316,9 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
+            padding-top: 100px;
             overflow: hidden;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            background: linear-gradient(135deg, var(--neutral-100) 0%, #e6ecff 100%);
         }
 
         .hero-background {
@@ -275,9 +328,16 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 102, 204, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(196, 30, 58, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 10% 30%, rgba(0, 102, 204, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(196, 30, 58, 0.08) 0%, transparent 40%),
+                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(196,30,58,0.02) 20px, rgba(0,102,204,0.02) 40px);
             z-index: 0;
+            animation: backgroundMove 20s linear infinite;
+        }
+
+        @keyframes backgroundMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
         }
 
         .hero-container {
@@ -290,7 +350,7 @@
         }
 
         .hero-content {
-            animation: fadeInUp 0.8s ease;
+            animation: fadeInUp 1s ease;
         }
 
         @keyframes fadeInUp {
@@ -307,15 +367,42 @@
         .trust-badge {
             display: inline-flex;
             align-items: center;
-            gap: var(--spacing-xs);
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.9);
+            gap: var(--spacing-sm);
+            padding: 0.7rem 1.5rem;
+            background: var(--white);
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--primary-blue);
+            color: var(--neutral-900);
             margin-bottom: var(--spacing-md);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(196, 30, 58, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(196,30,58,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            20%, 100% { transform: translateX(100%); }
+        }
+
+        .trust-badge span {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
         }
 
         .trust-badge svg {
@@ -324,7 +411,7 @@
 
         .hero-title {
             font-family: var(--font-display);
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
             color: var(--neutral-900);
@@ -333,17 +420,39 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-red) 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .gradient-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
+            border-radius: 4px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: slideIn 1s ease forwards 0.5s;
+        }
+
+        @keyframes slideIn {
+            to { transform: scaleX(1); }
         }
 
         .hero-description {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--neutral-700);
             margin-bottom: var(--spacing-xl);
             line-height: 1.7;
+            max-width: 600px;
         }
 
         .hero-cta {
@@ -355,33 +464,85 @@
         .hero-stats {
             display: flex;
             gap: var(--spacing-xl);
+            flex-wrap: wrap;
         }
 
         .stat {
             text-align: center;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            min-width: 140px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
+        }
+
+        .stat::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, rgba(196,30,58,0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .stat-number {
             font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--neutral-900);
             line-height: 1;
+            margin-bottom: 5px;
         }
 
-        .stat-number.highlight {
+        .stat-number.green {
+            color: var(--accent-green);
+            position: relative;
+            display: inline-block;
+        }
+
+        .stat-number.green::after {
+            content: '★';
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            font-size: 16px;
             color: var(--accent-red);
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--neutral-700);
-            margin-top: 0.25rem;
+            font-weight: 500;
         }
 
         .hero-image {
             position: relative;
-            height: 500px;
+            height: 600px;
             animation: fadeIn 1s ease 0.3s both;
         }
 
@@ -393,86 +554,189 @@
         .hero-card {
             position: absolute;
             background: var(--white);
-            padding: 1.5rem 2rem;
+            padding: 1.8rem 2.2rem;
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-xl);
             display: flex;
             align-items: center;
             gap: var(--spacing-md);
-            animation: float 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
             border: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+            border-radius: calc(var(--radius-xl) + 2px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .hero-card:hover::before {
+            opacity: 0.3;
         }
 
         .hero-card:hover {
-            border-color: var(--accent-red);
+            transform: scale(1.05);
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
         }
 
         .hero-card.card-1 {
-            top: 10%;
-            left: 10%;
+            top: 5%;
+            left: 0;
             animation-delay: 0s;
+            background: linear-gradient(135deg, var(--white), rgba(0,102,204,0.05));
         }
 
         .hero-card.card-2 {
-            top: 45%;
-            right: 5%;
-            animation-delay: 0.5s;
+            top: 40%;
+            right: 0;
+            animation-delay: 1s;
+            background: linear-gradient(135deg, var(--white), rgba(196,30,58,0.05));
         }
 
         .hero-card.card-3 {
-            bottom: 15%;
-            left: 20%;
-            animation-delay: 1s;
+            bottom: 10%;
+            left: 10%;
+            animation-delay: 2s;
+            background: linear-gradient(135deg, var(--white), rgba(0,102,204,0.05));
         }
 
         .card-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             transition: transform 0.3s ease;
         }
 
         .hero-card:hover .card-icon {
-            transform: scale(1.1);
-            color: var(--accent-red);
+            transform: scale(1.2) rotate(5deg);
         }
 
         .card-text {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--neutral-800);
+            font-size: 1.1rem;
         }
 
         /* Section Styles */
         section {
             padding: var(--spacing-3xl) 0;
+            position: relative;
         }
 
         .section-header {
             text-align: center;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto var(--spacing-2xl);
+            position: relative;
+        }
+
+        .section-header::before,
+        .section-header::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 4px;
+        }
+
+        .section-header::before {
+            left: -100px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue));
+        }
+
+        .section-header::after {
+            right: -100px;
+            background: linear-gradient(90deg, var(--accent-red), transparent);
+        }
+
+        @media (max-width: 1200px) {
+            .section-header::before,
+            .section-header::after {
+                display: none;
+            }
         }
 
         .section-title {
             font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.8rem;
+            font-weight: 800;
             color: var(--neutral-900);
             margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
+            border-radius: 3px;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .section-header:hover .section-title span::after {
+            transform: scaleX(1);
         }
 
         .section-description {
-            font-size: 1.125rem;
+            font-size: 1.2rem;
             color: var(--neutral-700);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Services Section */
         .services {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--white) 0%, var(--neutral-100) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(196,30,58,0.03) 0%, transparent 50%);
+            animation: rotateSlow 30s linear infinite;
+        }
+
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .services-grid {
@@ -480,36 +744,94 @@
             grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing-lg);
             margin-bottom: var(--spacing-xl);
+            position: relative;
+            z-index: 1;
         }
 
         .service-card {
             background: var(--white);
             padding: var(--spacing-xl);
-            border-radius: var(--radius-xl);
+            border-radius: 40px;
             border: 2px solid var(--neutral-200);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(196,30,58,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(50%, 50%);
+            transition: all 0.6s ease;
+        }
+
+        .service-card:hover::after {
+            transform: translate(30%, 30%) scale(2);
         }
 
         .service-card:hover {
-            border-color: var(--accent-red);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-5px);
+            border-color: transparent;
+            box-shadow: 0 30px 50px rgba(196, 30, 58, 0.15);
+            transform: translateY(-15px) scale(1.02);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.8rem;
             margin-bottom: var(--spacing-md);
-            transition: color 0.3s ease;
+            position: relative;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--accent-red) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .service-card:hover .service-icon::after {
+            opacity: 0.2;
         }
 
         .service-card:hover .service-icon {
-            color: var(--accent-red);
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-title {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--neutral-900);
             margin-bottom: var(--spacing-sm);
@@ -523,11 +845,14 @@
         .services-cta {
             text-align: center;
             margin-top: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
         }
 
         /* Destinations Section */
         .destinations {
-            background: var(--neutral-100);
+            background: var(--white);
+            position: relative;
         }
 
         .destinations-tabs {
@@ -536,40 +861,75 @@
             margin-bottom: var(--spacing-xl);
             flex-wrap: wrap;
             justify-content: center;
+            position: relative;
+            z-index: 2;
         }
 
         .destination-tab {
-            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
             background: var(--white);
             border: 2px solid var(--neutral-200);
-            border-radius: var(--radius-lg);
+            border-radius: 60px;
             font-family: var(--font-body);
             font-weight: 600;
             font-size: 1rem;
             color: var(--neutral-700);
             cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destination-tab .fi {
+            font-size: 1.4rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
 
         .destination-tab:hover {
             border-color: var(--accent-red);
-            color: var(--accent-red);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(196,30,58,0.2);
+        }
+
+        .destination-tab:hover .fi {
+            transform: rotate(360deg) scale(1.1);
         }
 
         .destination-tab.active {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
+            border-color: transparent;
             color: var(--white);
+            box-shadow: 0 15px 30px rgba(196,30,58,0.3);
+        }
+
+        .destination-tab.active .fi {
+            box-shadow: 0 4px 12px rgba(255,255,255,0.5);
         }
 
         .destinations-content {
             position: relative;
-            min-height: 500px;
+            min-height: 700px;
         }
 
         .destination-panel {
             display: none;
-            animation: fadeInUp 0.5s ease;
+            animation: fadeInScale 0.6s ease;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .destination-panel.active {
@@ -577,17 +937,49 @@
         }
 
         .destination-info {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--white) 0%, var(--neutral-100) 100%);
             padding: var(--spacing-2xl);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-md);
+            border-radius: 50px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(196,30,58,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destination-info::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(196,30,58,0.05) 0%, transparent 50%);
+            animation: rotateFast 20s linear infinite;
+        }
+
+        @keyframes rotateFast {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .destination-info h3 {
             font-family: var(--font-display);
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--neutral-900);
             margin-bottom: var(--spacing-xl);
+            position: relative;
+            display: inline-block;
+        }
+
+        .destination-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
+            border-radius: 5px;
         }
 
         .info-grid {
@@ -595,86 +987,174 @@
             grid-template-columns: repeat(2, 1fr);
             gap: var(--spacing-lg);
             margin-bottom: var(--spacing-xl);
+            position: relative;
+            z-index: 1;
         }
 
         .info-item {
-            background: var(--neutral-100);
-            padding: var(--spacing-md);
-            border-radius: var(--radius-md);
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--accent-red);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(196,30,58,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .info-item:hover {
+            transform: translateX(15px) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(196,30,58,0.15);
         }
 
         .info-label {
             font-weight: 600;
             color: var(--neutral-700);
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .info-value {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-blue);
         }
 
         .destination-highlights {
             margin-bottom: var(--spacing-xl);
+            position: relative;
+            z-index: 1;
         }
 
         .destination-highlights h4,
         .top-universities h4 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--neutral-900);
             margin-bottom: var(--spacing-md);
+            position: relative;
+            display: inline-block;
+        }
+
+        .destination-highlights h4::after,
+        .top-universities h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red), var(--primary-blue));
+            border-radius: 4px;
         }
 
         .destination-highlights ul {
             list-style: none;
             padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-sm);
         }
 
         .destination-highlights li {
-            padding-left: 1.5rem;
+            padding-left: 2rem;
             margin-bottom: var(--spacing-sm);
             position: relative;
             color: var(--neutral-700);
+            font-size: 1.1rem;
         }
 
         .destination-highlights li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-red);
+            color: var(--accent-green);
             font-weight: 700;
+            font-size: 1.3rem;
         }
 
         .university-tags {
             display: flex;
             flex-wrap: wrap;
             gap: var(--spacing-sm);
+            position: relative;
+            z-index: 1;
         }
 
         .university-tags span {
-            background: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-red) 100%);
             color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
             font-weight: 500;
+            box-shadow: 0 10px 25px rgba(0,102,204,0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .university-tags span::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .university-tags span:hover::before {
+            left: 100%;
+        }
+
+        .university-tags span:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 35px rgba(196,30,58,0.4);
         }
 
         /* Cost Calculator */
         .cost-calculator {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--neutral-100) 0%, var(--white) 100%);
         }
 
         .calculator-card {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: var(--neutral-100);
+            background: var(--white);
             padding: var(--spacing-2xl);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
+            border-radius: 60px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(196,30,58,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(196,30,58,0.05) 0%, transparent 50%);
+            animation: rotateSlow 30s linear infinite;
         }
 
         .calculator-form {
@@ -682,6 +1162,8 @@
             grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing-md);
             margin-bottom: var(--spacing-lg);
+            position: relative;
+            z-index: 1;
         }
 
         .form-group {
@@ -694,41 +1176,47 @@
             color: var(--neutral-700);
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .form-control {
-            padding: 0.75rem 1rem;
+            padding: 1rem 1.2rem;
             border: 2px solid var(--neutral-300);
-            border-radius: var(--radius-md);
+            border-radius: 30px;
             font-family: var(--font-body);
             font-size: 1rem;
             background: var(--white);
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--accent-red);
+            box-shadow: 0 0 0 4px rgba(196,30,58,0.1);
         }
 
         #calculate-btn {
             grid-column: 1 / -1;
+            margin-top: var(--spacing-sm);
         }
 
         .calculator-result {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--neutral-100) 0%, var(--white) 100%);
+            padding: var(--spacing-xl);
+            border-radius: 40px;
             margin-top: var(--spacing-lg);
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--neutral-200);
         }
 
         .calculator-result h3 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--neutral-900);
             margin-bottom: var(--spacing-md);
             text-align: center;
-            line-height: 1.3;
         }
 
         .result-breakdown {
@@ -739,36 +1227,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-lg);
             margin-bottom: var(--spacing-sm);
-            background: var(--neutral-100);
-            border-radius: var(--radius-md);
+            background: var(--white);
+            border-radius: 30px;
             gap: var(--spacing-sm);
             flex-wrap: wrap;
+            border: 2px solid var(--neutral-200);
+            transition: all 0.3s ease;
         }
 
-        .breakdown-item span {
-            flex-shrink: 0;
-            font-size: 0.95rem;
-        }
-
-        .breakdown-item strong {
-            font-size: 1.1rem;
-            word-break: break-word;
+        .breakdown-item:hover {
+            border-color: var(--accent-red);
+            transform: translateX(5px);
         }
 
         .breakdown-item.total {
-            background: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-red));
             color: var(--white);
-            font-size: 1rem;
-            font-weight: 700;
-            margin-top: var(--spacing-md);
-            padding: var(--spacing-md) var(--spacing-lg);
-        }
-
-        .breakdown-item.total span,
-        .breakdown-item.total strong {
-            font-size: 1rem;
+            border: none;
         }
 
         .result-note {
@@ -777,1135 +1254,6 @@
             font-style: italic;
             text-align: center;
             margin-bottom: var(--spacing-md);
-        }
-
-        .calculator-result .btn {
-            width: 100%;
-        }
-
-        .calculator-result .btn-secondary:hover {
-            border-color: var(--accent-red);
-            color: var(--accent-red);
-        }
-
-        /* Process Timeline */
-        .process {
-            background: var(--neutral-100);
-        }
-
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--neutral-300);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: var(--spacing-2xl);
-        }
-
-        .timeline-marker {
-            position: absolute;
-            left: -2rem;
-            top: 0;
-            width: 2rem;
-            height: 2rem;
-            background: var(--primary-blue);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            box-shadow: 0 0 0 4px var(--neutral-100);
-        }
-
-        .timeline-content {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-
-        .timeline-content h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--neutral-900);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .timeline-content p {
-            color: var(--neutral-700);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .timeline-duration {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--neutral-100);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary-blue);
-        }
-
-        .process-cta {
-            text-align: center;
-            margin-top: var(--spacing-2xl);
-        }
-
-        /* Resources Section */
-        .resources {
-            background: var(--white);
-        }
-
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .resource-card {
-            background: var(--neutral-100);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-xl);
-        }
-
-        .resource-icon {
-            font-size: 3rem;
-            margin-bottom: var(--spacing-md);
-            transition: color 0.3s ease;
-        }
-
-        .resource-card:hover .resource-icon {
-            color: var(--accent-red);
-        }
-
-        .resource-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--neutral-900);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .resource-list {
-            list-style: none;
-        }
-
-        .resource-list li {
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .resource-list a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .resource-list a:hover {
-            color: var(--accent-red);
-            text-decoration: underline;
-        }
-
-        .resources-help {
-            max-width: 700px;
-            margin: var(--spacing-2xl) auto 0;
-        }
-
-        .help-card {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
-            padding: var(--spacing-2xl);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            color: var(--white);
-        }
-
-        .help-card h3 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .help-card p {
-            font-size: 1.1rem;
-            margin-bottom: var(--spacing-lg);
-            opacity: 0.95;
-        }
-
-        .help-card .btn-primary {
-            background: var(--white);
-            color: var(--primary-blue);
-        }
-
-        .help-card .btn-primary:hover {
-            background: var(--neutral-100);
-        }
-
-        /* FAQ Section */
-        .faq {
-            background: var(--neutral-100);
-        }
-
-        .faq-grid {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--spacing-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .faq-question {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-lg);
-            background: none;
-            border: none;
-            font-family: var(--font-body);
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--neutral-900);
-            text-align: left;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        .faq-question:hover {
-            background: var(--neutral-100);
-            color: var(--accent-red);
-        }
-
-        .faq-icon {
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-            color: var(--primary-blue);
-        }
-
-        .faq-question:hover .faq-icon {
-            color: var(--accent-red);
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            padding: 0 var(--spacing-lg) var(--spacing-lg);
-            color: var(--neutral-700);
-            line-height: 1.7;
-        }
-
-        /* Social Proof Section */
-        .social-proof {
-            background: var(--white);
-        }
-
-        .social-feeds {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-lg);
-        }
-
-        .social-feed {
-            background: var(--neutral-100);
-            padding: var(--spacing-xl);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            transition: border-color 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .social-feed:hover {
-            border-color: var(--accent-red);
-        }
-
-        .social-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .social-header svg {
-            transition: transform 0.3s ease;
-        }
-
-        .social-feed:hover .social-header svg {
-            transform: scale(1.1);
-        }
-
-        .social-header span {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--neutral-900);
-        }
-
-        .social-embed-text {
-            color: var(--neutral-700);
-            margin-bottom: var(--spacing-lg);
-            line-height: 1.7;
-        }
-
-        .social-feed .btn-secondary:hover {
-            border-color: var(--accent-red);
-            color: var(--accent-red);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: var(--spacing-3xl) 0;
-        }
-
-        .cta-title {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .cta-description {
-            font-size: 1.25rem;
-            margin-bottom: var(--spacing-xl);
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: var(--spacing-md);
-            justify-content: center;
-        }
-
-        .cta-section .btn-primary {
-            background: var(--white);
-            color: var(--primary-blue);
-        }
-
-        .cta-section .btn-primary:hover {
-            background: var(--neutral-100);
-        }
-
-        .cta-section .btn-secondary {
-            background: transparent;
-            border-color: var(--white);
-            color: var(--white);
-        }
-
-        .cta-section .btn-secondary:hover {
-            background: var(--white);
-            border-color: var(--white);
-            color: var(--accent-red);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--neutral-900);
-            color: var(--neutral-300);
-            padding: var(--spacing-3xl) 0 var(--spacing-lg);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: var(--spacing-2xl);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .footer-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--white);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .footer-description {
-            line-height: 1.7;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .social-links {
-            display: flex;
-            gap: var(--spacing-md);
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-red);
-            transform: translateY(-3px);
-        }
-
-        .footer-heading {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            color: var(--white);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .footer-links a {
-            color: var(--neutral-300);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-red);
-        }
-
-        .footer-contact {
-            list-style: none;
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .footer-contact svg {
-            color: var(--accent-red);
-        }
-
-        .footer-contact a {
-            color: var(--neutral-300);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-contact a:hover {
-            color: var(--accent-red);
-        }
-
-        .footer-bottom {
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            color: var(--neutral-400);
-        }
-
-        .footer-credits {
-            margin-top: var(--spacing-sm);
-            padding-top: var(--spacing-sm);
-        }
-
-        .footer-credits p {
-            font-size: 0.9rem;
-            color: var(--neutral-400);
-        }
-
-        .dotx-link {
-            color: var(--accent-red);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .dotx-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-red);
-            transition: width 0.3s ease;
-        }
-
-        .dotx-link:hover {
-            color: var(--white);
-        }
-
-        .dotx-link:hover::after {
-            width: 100%;
-        }
-
-        /* Loan Resources Section */
-        .loan-resources {
-            background: var(--neutral-100);
-        }
-
-        .loan-tabs {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-xl);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .loan-tab {
-            padding: 0.75rem 1.5rem;
-            background: var(--white);
-            border: 2px solid var(--neutral-200);
-            border-radius: var(--radius-lg);
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--neutral-700);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .loan-tab:hover {
-            border-color: var(--accent-red);
-            color: var(--accent-red);
-        }
-
-        .loan-tab.active {
-            background: var(--primary-blue);
-            border-color: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .loan-panel {
-            display: none;
-        }
-
-        .loan-panel.active {
-            display: block;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        .loan-calculator-card {
-            background: var(--white);
-            padding: var(--spacing-2xl);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .loan-calc-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .loan-results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .loan-results-grid.show {
-            opacity: 1;
-        }
-
-        .loan-result-card {
-            background: var(--neutral-100);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            text-align: center;
-        }
-
-        .loan-result-label {
-            font-size: 0.9rem;
-            color: var(--neutral-700);
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .loan-result-value {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        .providers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-        }
-
-        .provider-card {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-
-        .provider-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-left-color: var(--accent-red);
-        }
-
-        .provider-category {
-            display: inline-block;
-            background: var(--neutral-100);
-            color: var(--primary-blue);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .provider-name {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--neutral-900);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .provider-details {
-            margin-top: var(--spacing-md);
-        }
-
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            padding: var(--spacing-sm) 0;
-            border-bottom: 1px solid var(--neutral-200);
-        }
-
-        .detail-label {
-            font-weight: 600;
-            color: var(--neutral-700);
-            font-size: 0.95rem;
-        }
-
-        .detail-value {
-            font-weight: 600;
-            color: var(--primary-blue);
-            font-size: 0.95rem;
-        }
-
-        .loan-guide-steps {
-            display: grid;
-            gap: var(--spacing-lg);
-        }
-
-        .loan-step {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            gap: var(--spacing-md);
-        }
-
-        .loan-step-number {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-blue);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .loan-step-content h4 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            color: var(--neutral-900);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .loan-step-content ul {
-            margin-left: var(--spacing-md);
-            color: var(--neutral-700);
-        }
-
-        .loan-step-content li {
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .loan-info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-lg);
-        }
-
-        .loan-info-card {
-            background: var(--white);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            border-top: 4px solid var(--accent-red);
-        }
-
-        .loan-info-card h4 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            color: var(--neutral-900);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .loan-info-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .loan-info-card li {
-            padding-left: 1.5rem;
-            margin-bottom: var(--spacing-sm);
-            position: relative;
-            color: var(--neutral-700);
-        }
-
-        .loan-info-card li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-red);
-            font-weight: 700;
-        }
-
-        .comparison-table {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            margin-top: var(--spacing-lg);
-        }
-
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .comparison-table th {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: var(--spacing-md);
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: var(--spacing-md);
-            border-bottom: 1px solid var(--neutral-200);
-        }
-
-        .comparison-table tr:hover {
-            background: var(--neutral-100);
-        }
-
-        .feature-check {
-            color: var(--accent-red);
-            font-weight: 700;
-        }
-
-        /* Mobile-friendly comparison cards */
-        .mobile-comparison {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .comparison-table table {
-                display: none;
-            }
-
-            .mobile-comparison {
-                display: block;
-            }
-
-            .comparison-card {
-                background: var(--white);
-                padding: var(--spacing-md);
-                border-radius: var(--radius-lg);
-                margin-bottom: var(--spacing-md);
-                box-shadow: var(--shadow-sm);
-            }
-
-            .comparison-card h4 {
-                font-family: var(--font-display);
-                font-size: 1.1rem;
-                color: var(--neutral-900);
-                margin-bottom: var(--spacing-sm);
-                padding-bottom: var(--spacing-sm);
-                border-bottom: 2px solid var(--accent-red);
-            }
-
-            .comparison-row {
-                display: grid;
-                grid-template-columns: 40% 60%;
-                gap: var(--spacing-sm);
-                padding: var(--spacing-sm) 0;
-                border-bottom: 1px solid var(--neutral-200);
-            }
-
-            .comparison-row:last-child {
-                border-bottom: none;
-            }
-
-            .comparison-label {
-                font-weight: 600;
-                color: var(--neutral-700);
-                font-size: 0.9rem;
-            }
-
-            .comparison-value {
-                color: var(--neutral-800);
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-xl);
-            }
-            
-            .hero-image {
-                display: none;
-            }
-            
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .loan-calc-grid,
-            .loan-results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .loan-tabs {
-                gap: var(--spacing-xs);
-            }
-
-            .loan-tab {
-                font-size: 0.9rem;
-                padding: 0.6rem 1rem;
-            }
-
-            .providers-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .loan-info-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .comparison-table {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .comparison-table table {
-                min-width: 600px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                font-size: 0.85rem;
-                padding: var(--spacing-sm);
-            }
-            
-            .resources-grid,
-            .social-feeds {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-            }
-            
-            .hero-stats {
-                gap: var(--spacing-md);
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .destinations-tabs {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .calculator-form {
-                grid-template-columns: 1fr;
-            }
-            
-            .calculator-card {
-                padding: var(--spacing-md);
-            }
-            
-            .calculator-result {
-                padding: var(--spacing-md);
-            }
-            
-            .calculator-result h3 {
-                font-size: 1.25rem;
-            }
-            
-            .breakdown-item {
-                padding: var(--spacing-sm) var(--spacing-md);
-                font-size: 0.9rem;
-            }
-            
-            .breakdown-item span {
-                font-size: 0.85rem;
-            }
-            
-            .breakdown-item strong {
-                font-size: 0.95rem;
-                text-align: right;
-            }
-            
-            .breakdown-item.total {
-                padding: var(--spacing-md);
-            }
-
-            /* Loan Resources Mobile Optimizations */
-            .loan-calculator-card {
-                padding: var(--spacing-md);
-            }
-
-            .loan-calculator-card h3 {
-                font-size: 1.25rem;
-            }
-
-            .loan-result-value {
-                font-size: 1.5rem;
-            }
-
-            .loan-step {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .loan-step-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1.25rem;
-            }
-
-            .loan-step-content h4 {
-                font-size: 1.1rem;
-            }
-
-            .provider-card {
-                padding: var(--spacing-md);
-            }
-
-            .provider-name {
-                font-size: 1.25rem;
-            }
-
-            .detail-row {
-                font-size: 0.85rem;
-                gap: var(--spacing-xs);
-            }
-
-            .detail-label,
-            .detail-value {
-                font-size: 0.85rem;
-            }
-
-            .loan-tabs {
-                justify-content: flex-start;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .loan-tabs::-webkit-scrollbar {
-                display: none;
-            }
-
-            .loan-tab {
-                flex-shrink: 0;
-                white-space: nowrap;
-            }
-            
-            .timeline {
-                padding-left: 2rem;
-            }
-            
-            .timeline-marker {
-                left: -1.5rem;
-                width: 1.5rem;
-                height: 1.5rem;
-                font-size: 0.85rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                font-size: 0.95rem;
-                padding: 0.7rem 1.25rem;
-            }
-            
-            .btn-large {
-                font-size: 1rem;
-                padding: 0.9rem 1.5rem;
-            }
-            
-            .result-note {
-                font-size: 0.85rem;
-                padding: 0 var(--spacing-xs);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 var(--spacing-sm);
-            }
-            
-            .hero-title {
-                font-size: 1.75rem;
-            }
-            
-            .hero-description {
-                font-size: 1rem;
-            }
-            
-            .destinations-tabs {
-                grid-template-columns: 1fr;
-            }
-            
-            .destination-tab {
-                padding: 0.6rem 1rem;
-                font-size: 0.95rem;
-            }
-            
-            .service-card,
-            .resource-card {
-                padding: var(--spacing-md);
-            }
-            
-            .stat-number {
-                font-size: 1.75rem;
-            }
-            
-            .stat-label {
-                font-size: 0.85rem;
-            }
-            
-            .hero-stats {
-                gap: var(--spacing-sm);
-            }
-            
-            .section-title {
-                font-size: 1.75rem;
-            }
-            
-            .cta-title {
-                font-size: 1.75rem;
-            }
-            
-            .calculator-result h3 {
-                font-size: 1.1rem;
-            }
-            
-            .breakdown-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
-            }
-            
-            .breakdown-item strong {
-                font-size: 1.1rem;
-                text-align: left;
-            }
-            
-            .breakdown-item.total {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .btn svg {
-                width: 20px;
-                height: 20px;
-            }
         }
     </style>
 </head>
@@ -1917,11 +1265,10 @@
             <div class="nav-menu">
                 <a href="#destinations" class="nav-link">Destinations</a>
                 <a href="#services" class="nav-link">Services</a>
-                <a href="#loan-resources" class="nav-link">Loan Resources</a>
                 <a href="#process" class="nav-link">Process</a>
                 <a href="#resources" class="nav-link">Resources</a>
                 <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="btn btn-primary btn-small">Get Started</a>
+                <a href="#contact" class="btn btn-secondary btn-small">Get Started</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
@@ -1937,8 +1284,8 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="trust-badge">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="currentColor"/>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
                     </svg>
                     <span>10+ Years of Excellence</span>
                 </div>
@@ -1958,11 +1305,11 @@
                         </svg>
                         Start Your Journey
                     </a>
-                    <a href="/cdn-cgi/l/email-protection#bdd2ded6ccd9deccfdcbd9ced0cdc8d8d4cddac4c6d3ced8c8d5cfd2df93ded2d0" class="btn btn-secondary btn-large">
+                    <a href="#destinations" class="btn btn-outline btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
                         </svg>
-                        Email Us
+                        Explore Destinations
                     </a>
                 </div>
                 <div class="hero-stats">
@@ -1971,8 +1318,8 @@
                         <div class="stat-label">Students Placed</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number highlight">98%</div>
-                        <div class="stat-label">Visa Success Rate</div>
+                        <div class="stat-number green">98%</div>
+                        <div class="stat-label">Visa Success</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">50+</div>
@@ -1983,7 +1330,7 @@
             <div class="hero-image">
                 <div class="hero-card card-1">
                     <div class="card-icon">🎓</div>
-                    <div class="card-text">University Selection</div>
+                    <div class="card-text">Expert Guidance</div>
                 </div>
                 <div class="hero-card card-2">
                     <div class="card-icon">✈️</div>
@@ -1991,17 +1338,17 @@
                 </div>
                 <div class="hero-card card-3">
                     <div class="card-icon">🌍</div>
-                    <div class="card-text">Global Opportunities</div>
+                    <div class="card-text">Global Access</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+        <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Complete Support, Every Step</h2>
+                <h2 class="section-title">Complete <span>Support</span>, Every Step</h2>
                 <p class="section-description">From your first inquiry to your first day on campus, we're here to guide you</p>
             </div>
             <div class="services-grid">
@@ -2037,25 +1384,37 @@
                 </div>
             </div>
             <div class="services-cta">
-                <a href="https://wa.me/2348187861554" class="btn btn-primary" target="_blank">Get Expert Guidance</a>
+                <a href="https://wa.me/2348187861554" class="btn btn-secondary btn-large" target="_blank">Get Expert Guidance</a>
             </div>
         </div>
     </section>
 
-    <!-- Destinations Section - UPDATED WITH NEW UNIVERSITIES AND NO FLAGS -->
+    <!-- Destinations Section with Flags -->
     <section id="destinations" class="destinations">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Study Destinations</h2>
+                <h2 class="section-title">Study <span>Destinations</span></h2>
                 <p class="section-description">Explore your options across six leading study destinations</p>
             </div>
             <div class="destinations-tabs">
-                <button class="destination-tab active" data-country="canada">Canada</button>
-                <button class="destination-tab" data-country="uk">United Kingdom</button>
-                <button class="destination-tab" data-country="usa">United States</button>
-                <button class="destination-tab" data-country="ireland">Ireland</button>
-                <button class="destination-tab" data-country="germany">Germany</button>
-                <button class="destination-tab" data-country="australia">Australia</button>
+                <button class="destination-tab active" data-country="canada">
+                    <span class="fi fi-ca"></span> Canada
+                </button>
+                <button class="destination-tab" data-country="uk">
+                    <span class="fi fi-gb"></span> United Kingdom
+                </button>
+                <button class="destination-tab" data-country="usa">
+                    <span class="fi fi-us"></span> United States
+                </button>
+                <button class="destination-tab" data-country="ireland">
+                    <span class="fi fi-ie"></span> Ireland
+                </button>
+                <button class="destination-tab" data-country="germany">
+                    <span class="fi fi-de"></span> Germany
+                </button>
+                <button class="destination-tab" data-country="australia">
+                    <span class="fi fi-au"></span> Australia
+                </button>
             </div>
             <div class="destinations-content">
                 <!-- Canada -->
@@ -2087,6 +1446,8 @@
                                 <li>High-quality education at affordable costs</li>
                                 <li>Welcoming multicultural society</li>
                                 <li>Safe and peaceful environment</li>
+                                <li>Excellent healthcare system</li>
+                                <li>Strong job market for graduates</li>
                             </ul>
                         </div>
                         <div class="top-universities">
@@ -2127,10 +1488,12 @@
                         <div class="destination-highlights">
                             <h4>Why the UK?</h4>
                             <ul>
-                                <li>World-renowned universities and education system</li>
-                                <li>Shorter degree programs (3-year bachelor's, 1-year master's)</li>
-                                <li>Rich cultural heritage and global connections</li>
+                                <li>World-renowned universities</li>
+                                <li>Shorter degree programs</li>
+                                <li>Rich cultural heritage</li>
                                 <li>Gateway to Europe</li>
+                                <li>Excellent research opportunities</li>
+                                <li>Diverse international community</li>
                             </ul>
                         </div>
                         <div class="top-universities">
@@ -2161,7 +1524,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="info-label">💼 Work Rights</div>
-                                <div class="info-value">On-campus only (20 hrs/week)</div>
+                                <div class="info-value">On-campus (20 hrs/week)</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">🎓 Post-Study Work</div>
@@ -2171,10 +1534,12 @@
                         <div class="destination-highlights">
                             <h4>Why the USA?</h4>
                             <ul>
-                                <li>Home to the world's top-ranked universities</li>
-                                <li>Cutting-edge research and innovation opportunities</li>
-                                <li>Diverse academic programs and flexible curriculum</li>
-                                <li>Strong industry connections and career opportunities</li>
+                                <li>Top-ranked universities worldwide</li>
+                                <li>Cutting-edge research</li>
+                                <li>Flexible academic programs</li>
+                                <li>Strong industry connections</li>
+                                <li>Diverse campus experiences</li>
+                                <li>Extensive alumni networks</li>
                             </ul>
                         </div>
                         <div class="top-universities">
@@ -2215,9 +1580,11 @@
                             <h4>Why Ireland?</h4>
                             <ul>
                                 <li>English-speaking EU country</li>
-                                <li>Thriving tech and pharmaceutical industries</li>
-                                <li>Friendly and welcoming culture</li>
-                                <li>Lower tuition compared to UK/USA</li>
+                                <li>Thriving tech industry</li>
+                                <li>Friendly, welcoming culture</li>
+                                <li>Lower tuition costs</li>
+                                <li>Strong pharmaceutical sector</li>
+                                <li>Beautiful natural landscapes</li>
                             </ul>
                         </div>
                         <div class="top-universities">
@@ -2247,7 +1614,7 @@
                             </div>
                             <div class="info-item">
                                 <div class="info-label">💼 Work Rights</div>
-                                <div class="info-value">20 hrs/week during semester</div>
+                                <div class="info-value">20 hrs/week during term</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">🎓 Post-Study Work</div>
@@ -2257,10 +1624,12 @@
                         <div class="destination-highlights">
                             <h4>Why Germany?</h4>
                             <ul>
-                                <li>Free or low-cost tuition at public universities</li>
-                                <li>Strong engineering and technical programs</li>
-                                <li>Heart of Europe with excellent travel opportunities</li>
-                                <li>Growing English-taught programs</li>
+                                <li>Low/no tuition fees</li>
+                                <li>Strong engineering programs</li>
+                                <li>Heart of Europe</li>
+                                <li>Excellent job prospects</li>
+                                <li>Rich cultural heritage</li>
+                                <li>Growing English programs</li>
                             </ul>
                         </div>
                         <div class="top-universities">
@@ -2291,20 +1660,22 @@
                             </div>
                             <div class="info-item">
                                 <div class="info-label">💼 Work Rights</div>
-                                <div class="info-value">48 hrs/fortnight during term</div>
+                                <div class="info-value">48 hrs/fortnight</div>
                             </div>
                             <div class="info-item">
                                 <div class="info-label">🎓 Post-Study Work</div>
-                                <div class="info-value">2-4 years depending on degree</div>
+                                <div class="info-value">2-4 years</div>
                             </div>
                         </div>
                         <div class="destination-highlights">
                             <h4>Why Australia?</h4>
                             <ul>
-                                <li>High quality of life and stunning natural beauty</li>
-                                <li>Strong research and innovation focus</li>
-                                <li>Generous post-study work opportunities</li>
-                                <li>Safe, sunny, and student-friendly cities</li>
+                                <li>High quality of life</li>
+                                <li>Stunning natural beauty</li>
+                                <li>Strong research focus</li>
+                                <li>Generous work rights</li>
+                                <li>Multicultural society</li>
+                                <li>Excellent climate</li>
                             </ul>
                         </div>
                         <div class="top-universities">
@@ -2328,7 +1699,7 @@
     <section class="cost-calculator">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Estimate Your Study Costs</h2>
+                <h2 class="section-title">Estimate Your <span>Study Costs</span></h2>
                 <p class="section-description">Get a quick estimate of tuition and living expenses</p>
             </div>
             <div class="calculator-card">
@@ -2388,554 +1759,11 @@
         </div>
     </section>
 
-    <!-- Student Loan Resources Section -->
-    <section id="loan-resources" class="loan-resources">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Student Loan Resources</h2>
-                <p class="section-description">Comprehensive guidance on international and Nigerian student loans to fund your education</p>
-            </div>
-
-            <div class="loan-tabs">
-                <button class="loan-tab active" onclick="switchLoanTab('calculator')">Loan Calculator</button>
-                <button class="loan-tab" onclick="switchLoanTab('providers')">Loan Providers</button>
-                <button class="loan-tab" onclick="switchLoanTab('guide')">Application Guide</button>
-                <button class="loan-tab" onclick="switchLoanTab('comparison')">Loans vs Scholarships</button>
-            </div>
-
-            <!-- Loan Calculator Panel -->
-            <div id="calculator" class="loan-panel active">
-                <div class="loan-calculator-card">
-                    <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--neutral-900); margin-bottom: var(--spacing-md);">Calculate Loan Payments</h3>
-                    <p style="color: var(--neutral-700); margin-bottom: var(--spacing-lg);">Estimate your monthly payments and total cost of borrowing</p>
-                    
-                    <div class="loan-calc-grid">
-                        <div class="form-group">
-                            <label for="loanAmount">Loan Amount ($)</label>
-                            <input type="number" id="loanAmount" class="form-control" placeholder="50000" value="50000">
-                        </div>
-                        <div class="form-group">
-                            <label for="interestRate">Interest Rate (%)</label>
-                            <input type="number" id="interestRate" class="form-control" placeholder="7.5" value="7.5" step="0.1">
-                        </div>
-                        <div class="form-group">
-                            <label for="loanTerm">Loan Term (Years)</label>
-                            <select id="loanTerm" class="form-control">
-                                <option value="5">5 years</option>
-                                <option value="10" selected>10 years</option>
-                                <option value="15">15 years</option>
-                                <option value="20">20 years</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" onclick="calculateLoan()">Calculate</button>
-
-                    <div class="loan-results-grid" id="loanResults">
-                        <div class="loan-result-card">
-                            <div class="loan-result-label">Monthly Payment</div>
-                            <div class="loan-result-value" id="monthlyPayment">$0</div>
-                        </div>
-                        <div class="loan-result-card">
-                            <div class="loan-result-label">Total Repayment</div>
-                            <div class="loan-result-value" id="totalRepayment">$0</div>
-                        </div>
-                        <div class="loan-result-card">
-                            <div class="loan-result-label">Total Interest</div>
-                            <div class="loan-result-value" id="totalInterest">$0</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Loan Providers Panel -->
-            <div id="providers" class="loan-panel">
-                <div style="margin-bottom: var(--spacing-lg);">
-                    <div class="loan-tabs">
-                        <button class="loan-tab active" onclick="switchProviderTab('international')">International Loans</button>
-                        <button class="loan-tab" onclick="switchProviderTab('nigerian')">Nigerian Loans</button>
-                    </div>
-                </div>
-
-                <div id="international" class="loan-panel active">
-                    <div class="providers-grid">
-                        <div class="provider-card">
-                            <span class="provider-category">International</span>
-                            <h3 class="provider-name">Prodigy Finance</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">No co-signer required for international students at 150+ schools worldwide</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">7.99% - 13.49%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">Up to $150,000</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Co-signer</span>
-                                    <span class="detail-value">Not Required</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Countries</span>
-                                    <span class="detail-value">USA, UK, Canada, EU</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="provider-card">
-                            <span class="provider-category">International</span>
-                            <h3 class="provider-name">MPower Financing</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Loans for international students in USA & Canada without co-signers</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">8.99% - 14.99%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">Up to $100,000</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Co-signer</span>
-                                    <span class="detail-value">Not Required</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Countries</span>
-                                    <span class="detail-value">USA, Canada</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="provider-card">
-                            <span class="provider-category">International</span>
-                            <h3 class="provider-name">Sallie Mae</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">For US citizens or international students with US co-signer</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">4.50% - 12.99%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">100% of school costs</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Co-signer</span>
-                                    <span class="detail-value">Required for intl</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Countries</span>
-                                    <span class="detail-value">USA</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="provider-card">
-                            <span class="provider-category">International</span>
-                            <h3 class="provider-name">Discover Student Loans</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Competitive rates with US-based co-signer requirement</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">4.99% - 13.49%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">100% of school costs</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Co-signer</span>
-                                    <span class="detail-value">Required (US-based)</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Countries</span>
-                                    <span class="detail-value">USA</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="nigerian" class="loan-panel">
-                    <div class="providers-grid">
-                        <div class="provider-card">
-                            <span class="provider-category">Nigerian</span>
-                            <h3 class="provider-name">Sterling Bank Education Loan</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Flexible education loans for Nigerian students studying abroad</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">18% - 22%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">₦10,000,000</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Repayment Term</span>
-                                    <span class="detail-value">Up to 5 years</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Requirements</span>
-                                    <span class="detail-value">Admission, Guarantor</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="provider-card">
-                            <span class="provider-category">Nigerian</span>
-                            <h3 class="provider-name">Access Bank Student Loan</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Student loans for Nigerian students at home and abroad</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">15% - 20%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">₦15,000,000</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Repayment Term</span>
-                                    <span class="detail-value">Up to 6 years</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Requirements</span>
-                                    <span class="detail-value">Admission, Collateral</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="provider-card">
-                            <span class="provider-category">Nigerian</span>
-                            <h3 class="provider-name">NIRSAL Student Loan</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Government-backed loans for agriculture students</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">9% - 12%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">₦5,000,000</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Repayment Term</span>
-                                    <span class="detail-value">Up to 7 years</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Requirements</span>
-                                    <span class="detail-value">Field of study, Guarantor</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="provider-card">
-                            <span class="provider-category">Nigerian</span>
-                            <h3 class="provider-name">First Bank Education Loan</h3>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-md);">Education financing for undergraduate and postgraduate studies</p>
-                            <div class="provider-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Interest Rate</span>
-                                    <span class="detail-value">16% - 21%</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Max Amount</span>
-                                    <span class="detail-value">₦12,000,000</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Repayment Term</span>
-                                    <span class="detail-value">Up to 5 years</span>
-                                </div>
-                                <div class="detail-row" style="border-bottom: none;">
-                                    <span class="detail-label">Requirements</span>
-                                    <span class="detail-value">Admission, Income proof</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Application Guide Panel -->
-            <div id="guide" class="loan-panel">
-                <div class="loan-guide-steps">
-                    <div class="loan-step">
-                        <div class="loan-step-number">1</div>
-                        <div class="loan-step-content">
-                            <h4>Research & Compare Options</h4>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Start by understanding which loans you're eligible for</p>
-                            <ul>
-                                <li>Review interest rates and repayment terms</li>
-                                <li>Check eligibility requirements (citizenship, co-signer needs)</li>
-                                <li>Calculate total borrowing costs using our calculator</li>
-                                <li>Prioritize loans with favorable grace periods</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="loan-step">
-                        <div class="loan-step-number">2</div>
-                        <div class="loan-step-content">
-                            <h4>Gather Required Documents</h4>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Prepare all necessary documentation</p>
-                            <ul>
-                                <li><strong>Admission Letter:</strong> Official acceptance from university</li>
-                                <li><strong>Proof of Identity:</strong> International passport, national ID</li>
-                                <li><strong>Financial Documents:</strong> Bank statements (3-6 months)</li>
-                                <li><strong>Academic Records:</strong> Transcripts, test scores</li>
-                                <li><strong>Co-signer Documents:</strong> If required - income proof, credit report</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="loan-step">
-                        <div class="loan-step-number">3</div>
-                        <div class="loan-step-content">
-                            <h4>Submit Your Application</h4>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Complete the application accurately</p>
-                            <ul>
-                                <li>Fill out online application forms completely</li>
-                                <li>Double-check all information for accuracy</li>
-                                <li>Upload clear, legible copies of all documents</li>
-                                <li>Submit 2-3 months before semester starts</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="loan-step">
-                        <div class="loan-step-number">4</div>
-                        <div class="loan-step-content">
-                            <h4>Await Approval & Review Terms</h4>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Timeline: Most lenders respond within 2-4 weeks</p>
-                            <ul>
-                                <li>Check email regularly for lender communications</li>
-                                <li>Respond promptly to requests for additional information</li>
-                                <li>Review approved loan terms carefully before accepting</li>
-                                <li>Understand disbursement schedules and grace periods</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="loan-step">
-                        <div class="loan-step-number">5</div>
-                        <div class="loan-step-content">
-                            <h4>Accept Loan & Complete Certification</h4>
-                            <p style="color: var(--neutral-700); margin-bottom: var(--spacing-sm);">Finalize your loan agreement</p>
-                            <ul>
-                                <li>Sign the Master Promissory Note (MPN)</li>
-                                <li>Complete entrance counseling if required</li>
-                                <li>Coordinate with school's financial aid office</li>
-                                <li>Confirm disbursement dates align with tuition deadlines</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="loan-info-cards">
-                    <div class="loan-info-card">
-                        <h4>Timeline Expectations</h4>
-                        <ul>
-                            <li><strong>Research:</strong> 2-3 weeks</li>
-                            <li><strong>Document Prep:</strong> 1-2 weeks</li>
-                            <li><strong>Application:</strong> 1-2 days</li>
-                            <li><strong>Approval:</strong> 2-4 weeks</li>
-                            <li><strong>Disbursement:</strong> 1-2 weeks</li>
-                        </ul>
-                    </div>
-
-                    <div class="loan-info-card">
-                        <h4>Common Rejection Reasons</h4>
-                        <ul>
-                            <li>Incomplete documentation</li>
-                            <li>Poor or no credit history</li>
-                            <li>High debt-to-income ratio</li>
-                            <li>Unaccredited institution</li>
-                            <li>Non-eligible program</li>
-                        </ul>
-                    </div>
-
-                    <div class="loan-info-card">
-                        <h4>Pro Tips</h4>
-                        <ul>
-                            <li>Apply to multiple lenders</li>
-                            <li>Start 4-6 months before enrollment</li>
-                            <li>Build credit early if possible</li>
-                            <li>Consider part-time work</li>
-                            <li>Explore scholarships first</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comparison Panel -->
-            <div id="comparison" class="loan-panel">
-                <!-- Desktop Table View -->
-                <div class="comparison-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Factor</th>
-                                <th>Student Loans</th>
-                                <th>Scholarships</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Cost</strong></td>
-                                <td>Must be repaid with interest</td>
-                                <td><span class="feature-check">✓</span> Free money - no repayment</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Availability</strong></td>
-                                <td><span class="feature-check">✓</span> Widely available</td>
-                                <td>Competitive, limited spots</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Speed</strong></td>
-                                <td><span class="feature-check">✓</span> Quick approval (2-4 weeks)</td>
-                                <td>Long cycles (3-6 months)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Amount</strong></td>
-                                <td><span class="feature-check">✓</span> Can cover full costs</td>
-                                <td>Often partial funding</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Requirements</strong></td>
-                                <td>Admission letter, financial docs</td>
-                                <td>High GPA, essays, achievements</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Flexibility</strong></td>
-                                <td><span class="feature-check">✓</span> Use for any approved expenses</td>
-                                <td>May have usage restrictions</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Long-term Impact</strong></td>
-                                <td>Debt burden after graduation</td>
-                                <td><span class="feature-check">✓</span> No financial obligation</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Mobile Card View -->
-                    <div class="mobile-comparison">
-                        <div class="comparison-card">
-                            <h4>Student Loans</h4>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Cost</div>
-                                <div class="comparison-value">Must be repaid with interest</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Availability</div>
-                                <div class="comparison-value"><span class="feature-check">✓</span> Widely available</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Speed</div>
-                                <div class="comparison-value"><span class="feature-check">✓</span> Quick (2-4 weeks)</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Amount</div>
-                                <div class="comparison-value"><span class="feature-check">✓</span> Can cover full costs</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Requirements</div>
-                                <div class="comparison-value">Admission letter, financial docs</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Flexibility</div>
-                                <div class="comparison-value"><span class="feature-check">✓</span> Any approved expenses</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Long-term</div>
-                                <div class="comparison-value">Debt after graduation</div>
-                            </div>
-                        </div>
-
-                        <div class="comparison-card">
-                            <h4>Scholarships</h4>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Cost</div>
-                                <div class="comparison-value"><span class="feature-check">✓</span> Free money - no repayment</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Availability</div>
-                                <div class="comparison-value">Competitive, limited spots</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Speed</div>
-                                <div class="comparison-value">Long cycles (3-6 months)</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Amount</div>
-                                <div class="comparison-value">Often partial funding</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Requirements</div>
-                                <div class="comparison-value">High GPA, essays, achievements</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Flexibility</div>
-                                <div class="comparison-value">May have usage restrictions</div>
-                            </div>
-                            <div class="comparison-row">
-                                <div class="comparison-label">Long-term</div>
-                                <div class="comparison-value"><span class="feature-check">✓</span> No financial obligation</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="loan-info-cards">
-                    <div class="loan-info-card">
-                        <h4>When to Prioritize Scholarships</h4>
-                        <ul>
-                            <li>Strong academic record (3.5+ GPA)</li>
-                            <li>6+ months before enrollment</li>
-                            <li>Unique achievements or background</li>
-                            <li>Schools with generous aid</li>
-                            <li>Want to minimize debt</li>
-                        </ul>
-                    </div>
-
-                    <div class="loan-info-card">
-                        <h4>When Loans Make Sense</h4>
-                        <ul>
-                            <li>Enrollment deadline approaching</li>
-                            <li>Need guaranteed funding now</li>
-                            <li>Scholarships don't cover full costs</li>
-                            <li>Clear ROI from your degree</li>
-                            <li>Want predictable funding</li>
-                        </ul>
-                    </div>
-
-                    <div class="loan-info-card">
-                        <h4>Optimal Strategy: Combine Both</h4>
-                        <ul>
-                            <li>Apply for scholarships first</li>
-                            <li>Calculate your funding gap</li>
-                            <li>Use loans to bridge costs</li>
-                            <li>Keep applying while enrolled</li>
-                            <li>Consider part-time work</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: var(--spacing-xl); padding: var(--spacing-xl); background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
-                    <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--neutral-900); margin-bottom: var(--spacing-md);">Need Personalized Loan Guidance?</h3>
-                    <p style="color: var(--neutral-700); margin-bottom: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">Our expert consultants can help you navigate the loan process and find the best funding options for your unique situation.</p>
-                    <a href="https://wa.me/2348187861554" class="btn btn-primary btn-large" target="_blank">Get Loan Guidance</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Application Process Section -->
+    <!-- Process Timeline Section -->
     <section id="process" class="process">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Your Journey Timeline</h2>
+                <h2 class="section-title">Your <span>Journey</span> Timeline</h2>
                 <p class="section-description">A clear roadmap from start to campus</p>
             </div>
             <div class="timeline">
@@ -2989,16 +1817,16 @@
                 </div>
             </div>
             <div class="process-cta">
-                <a href="https://wa.me/2348187861554" class="btn btn-primary btn-large" target="_blank">Start Your Timeline Today</a>
+                <a href="https://wa.me/2348187861554" class="btn btn-secondary btn-large" target="_blank">Start Your Timeline Today</a>
             </div>
         </div>
     </section>
 
-    <!-- Scholarship Resources Section -->
+    <!-- Resources Section -->
     <section id="resources" class="resources">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Scholarship Resources</h2>
+                <h2 class="section-title">Scholarship <span>Resources</span></h2>
                 <p class="section-description">Find funding opportunities to make your dream affordable</p>
             </div>
             <div class="resources-grid">
@@ -3010,6 +1838,8 @@
                         <li><a href="https://www.scholarships.gc.ca/" target="_blank">Canadian Commonwealth Scholarship</a></li>
                         <li><a href="https://www.fulbrightonline.org/" target="_blank">Fulbright Program (USA)</a></li>
                         <li><a href="https://www.daad.de/en/" target="_blank">DAAD Scholarships (Germany)</a></li>
+                        <li><a href="https://www.ireland.ie/en/" target="_blank">Government of Ireland Scholarships</a></li>
+                        <li><a href="https://www.dfat.gov.au/people-to-people/australia-awards" target="_blank">Australia Awards</a></li>
                     </ul>
                 </div>
                 <div class="resource-card">
@@ -3020,6 +1850,8 @@
                         <li><a href="https://www.internationalscholarships.com/" target="_blank">International student awards</a></li>
                         <li><a href="https://www.findaphd.com/funding/" target="_blank">Research assistantships</a></li>
                         <li><a href="https://www.scholarshipstats.com/" target="_blank">Athletic scholarships</a></li>
+                        <li><a href="#" target="_blank">Need-based grants</a></li>
+                        <li><a href="#" target="_blank">Departmental funding</a></li>
                     </ul>
                 </div>
                 <div class="resource-card">
@@ -3029,7 +1861,9 @@
                         <li><a href="https://www.iie.org/" target="_blank">IIE Scholarships</a></li>
                         <li><a href="https://www.internationalscholarships.com/" target="_blank">International Scholarships Database</a></li>
                         <li><a href="https://www.scholarshipportal.com/" target="_blank">Scholarship Portal</a></li>
-                        <li><a href="https://www.opportunitiesforafricans.com/" target="_blank">Private foundations & trusts</a></li>
+                        <li><a href="https://www.opportunitiesforafricans.com/" target="_blank">Opportunities for Africans</a></li>
+                        <li><a href="#" target="_blank">Rotary Foundation</a></li>
+                        <li><a href="#" target="_blank">Commonwealth Scholarships</a></li>
                     </ul>
                 </div>
             </div>
@@ -3047,7 +1881,7 @@
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
                 <p class="section-description">Quick answers to common questions</p>
             </div>
             <div class="faq-grid">
@@ -3070,7 +1904,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Our fees vary depending on the destination and level of support you need. We offer flexible packages from basic application assistance to comprehensive end-to-end support. Contact us for a personalized quote based on your specific requirements.</p>
+                        <p>Our fees vary depending on the destination and level of support you need. We offer flexible packages from basic application assistance to comprehensive end-to-end support. Contact us for a personalized quote based on your specific requirements. Initial consultation is always free!</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3081,7 +1915,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Most English-speaking countries require proof of English proficiency through IELTS, TOEFL, or PTE. However, some universities offer waivers if you've completed previous education in English. We can help determine your specific requirements and prepare you for these tests.</p>
+                        <p>Most English-speaking countries require proof of English proficiency through IELTS, TOEFL, or PTE. However, some universities offer waivers if you've completed previous education in English. Germany and some European programs may accept different language tests. We can help determine your specific requirements.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3092,7 +1926,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes! Most countries allow international students to work part-time during their studies (typically 20 hours per week during term time). Work rights vary by country - Canada, UK, Ireland, and Australia offer the most flexible work opportunities for students.</p>
+                        <p>Yes! Most countries allow international students to work part-time during their studies (typically 20 hours per week during term time). Work rights vary by country - Canada, UK, Ireland, and Australia offer the most flexible work opportunities. Some countries also allow full-time work during holidays.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3103,7 +1937,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>We maintain a 98% visa success rate across all destinations. Our experienced team ensures every application is thoroughly prepared with complete documentation and proper guidance for visa interviews, maximizing your chances of approval.</p>
+                        <p>We maintain a 98% visa success rate across all destinations. Our experienced team ensures every application is thoroughly prepared with complete documentation and proper guidance for visa interviews. We stay updated on the latest visa requirements and changes.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3114,7 +1948,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely! Our post-arrival support includes helping you find suitable accommodation, whether on-campus residence or off-campus housing. We provide guidance on neighborhoods, budgeting, and connecting with other students.</p>
+                        <p>Absolutely! Our post-arrival support includes helping you find suitable accommodation, whether on-campus residence or off-campus housing. We provide guidance on neighborhoods, budgeting, and connecting with other students. We also offer pre-departure orientation sessions.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3125,7 +1959,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Typical requirements include: academic transcripts, English proficiency test scores, statement of purpose, letters of recommendation, CV/resume, passport copy, and financial documents. Specific requirements vary by country and institution - we'll provide you with a detailed checklist.</p>
+                        <p>Typical requirements include: academic transcripts, English proficiency test scores, statement of purpose, letters of recommendation (2-3), CV/resume, passport copy, and financial documents showing ability to fund your studies. Specific requirements vary by country and institution - we'll provide a detailed checklist.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3136,7 +1970,29 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Many countries allow you to bring dependents (spouse and children) on a dependent visa. Requirements and work rights for dependents vary by country. Canada, UK, and Australia are particularly family-friendly for international students.</p>
+                        <p>Many countries allow you to bring dependents (spouse and children) on a dependent visa. Requirements and work rights for dependents vary by country. Canada, UK, and Australia are particularly family-friendly. We can advise you on the best options for your family situation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What scholarships are available?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Scholarships range from government-funded (Chevening, DAAD, Fulbright) to university-specific merit awards and external funding. Amounts can cover partial to full tuition, and sometimes living expenses. We help identify opportunities based on your profile and guide you through applications.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>When should I start my application?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9l-7 7-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We recommend starting 12-18 months before your intended intake. This gives ample time for test preparation, university research, application crafting, scholarship applications, and visa processing. Most universities have deadlines 6-9 months before the start date.</p>
                     </div>
                 </div>
             </div>
@@ -3147,49 +2003,50 @@
     <section class="social-proof">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Success Stories From Our Students</h2>
+                <h2 class="section-title">Success <span>Stories</span></h2>
                 <p class="section-description">See what our students are sharing on social media</p>
             </div>
             <div class="social-feeds">
                 <div class="social-feed">
                     <div class="social-header">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M16 0C7.164 0 0 7.164 0 16c0 7.985 5.851 14.604 13.5 15.812v-11.19H9.437V16h4.063v-3.52c0-4.01 2.389-6.225 6.043-6.225 1.751 0 3.582.313 3.582.313v3.937h-2.018c-1.987 0-2.607 1.233-2.607 2.498V16h4.437l-.709 4.622h-3.728v11.19C26.149 30.604 32 23.985 32 16c0-8.836-7.164-16-16-16z" fill="#1877F2"/>
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 0C8.954 0 0 8.954 0 20c0 9.98 7.314 18.255 16.875 19.8V25.8h-5.075V20h5.075v-4.4c0-5.012 2.986-7.78 7.554-7.78 2.188 0 4.477.39 4.477.39v4.92h-2.522c-2.484 0-3.259 1.541-3.259 3.123V20h5.546l-.887 5.8h-4.66v13.999C32.686 38.255 40 29.98 40 20 40 8.954 31.046 0 20 0z" fill="#1877F2"/>
                         </svg>
                         <span>Facebook</span>
                     </div>
-                    <p class="social-embed-text">Follow our Facebook page for daily tips, success stories, and live Q&A sessions</p>
-                    <a href="https://www.facebook.com/share/1AYxrWfT5f/?mibextid=wwXIfr" class="btn btn-secondary" target="_blank">Visit Our Facebook</a>
+                    <p class="social-embed-text">🌟 "The Study Abroad Consultant made my dream of studying in Canada a reality! Their visa guidance was impeccable." - Sarah K.</p>
+                    <p class="social-embed-text">🇬🇧 "Got into my top choice in the UK with their essay help. Highly recommend!" - Michael O.</p>
+                    <a href="https://www.facebook.com/share/1AYxrWfT5f/" class="btn btn-outline btn-small" target="_blank">Visit Our Facebook</a>
                 </div>
                 <div class="social-feed">
                     <div class="social-header">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <defs>
-                                <radialGradient id="ig-gradient" cx="30%" cy="107%">
-                                    <stop offset="0%" style="stop-color:#FFD521" />
-                                    <stop offset="5%" style="stop-color:#FFD521" />
-                                    <stop offset="50%" style="stop-color:#F50000" />
-                                    <stop offset="95%" style="stop-color:#B900B4" />
-                                    <stop offset="100%" style="stop-color:#B900B4" />
+                                <radialGradient id="ig_grad" cx="30%" cy="107%">
+                                    <stop offset="0%" stop-color="#FFD521"/>
+                                    <stop offset="50%" stop-color="#F50000"/>
+                                    <stop offset="100%" stop-color="#B900B4"/>
                                 </radialGradient>
                             </defs>
-                            <path d="M16 2.88c4.275 0 4.781.016 6.469.093 1.563.071 2.406.331 2.969.55.75.291 1.281.638 1.844 1.2.562.563.909 1.094 1.2 1.844.219.563.479 1.406.55 2.969.077 1.688.093 2.194.093 6.469s-.016 4.781-.093 6.469c-.071 1.563-.331 2.406-.55 2.969-.291.75-.638 1.281-1.2 1.844-.563.562-1.094.909-1.844 1.2-.563.219-1.406.479-2.969.55-1.688.077-2.194.093-6.469.093s-4.781-.016-6.469-.093c-1.563-.071-2.406-.331-2.969-.55-.75-.291-1.281-.638-1.844-1.2-.562-.563-.909-1.094-1.2-1.844-.219-.563-.479-1.406-.55-2.969C2.896 20.781 2.88 20.275 2.88 16s.016-4.781.093-6.469c.071-1.563.331-2.406.55-2.969.291-.75.638-1.281 1.2-1.844.563-.562 1.094-.909 1.844-1.2.563-.219 1.406-.479 2.969-.55C11.219 2.896 11.725 2.88 16 2.88M16 0c-4.344 0-4.888.018-6.594.096-1.7.078-2.862.35-3.881.744-1.05.406-1.944.956-2.831 1.844C1.806 3.571 1.256 4.465.85 5.515c-.394 1.019-.666 2.181-.744 3.881C.018 11.112 0 11.656 0 16s.018 4.888.096 6.594c.078 1.7.35 2.862.744 3.881.406 1.05.956 1.944 1.844 2.831.887.888 1.781 1.438 2.831 1.844 1.019.394 2.181.666 3.881.744C11.112 31.982 11.656 32 16 32s4.888-.018 6.594-.096c1.7-.078 2.862-.35 3.881-.744 1.05-.406 1.944-.956 2.831-1.844.888-.887 1.438-1.781 1.844-2.831.394-1.019.666-2.181.744-3.881.078-1.706.096-2.25.096-6.594s-.018-4.888-.096-6.594c-.078-1.7-.35-2.862-.744-3.881-.406-1.05-.956-1.944-1.844-2.831-.887-.888-1.781-1.438-2.831-1.844-1.019-.394-2.181-.666-3.881-.744C20.888.018 20.344 0 16 0z" fill="url(#ig-gradient)"/>
-                            <circle cx="24.54" cy="7.46" r="1.92" fill="url(#ig-gradient)"/>
+                            <path d="M20 3.6c5.344 0 5.976.02 8.086.117 1.954.088 3.008.417 3.711.688.938.364 1.601.797 2.305 1.5.703.704 1.136 1.367 1.5 2.305.271.703.6 1.757.688 3.711.097 2.11.117 2.742.117 8.086s-.02 5.976-.117 8.086c-.088 1.954-.417 3.008-.688 3.711-.364.938-.797 1.601-1.5 2.305-.704.703-1.367 1.136-2.305 1.5-.703.271-1.757.6-3.711.688-2.11.097-2.742.117-8.086.117s-5.976-.02-8.086-.117c-1.954-.088-3.008-.417-3.711-.688-.938-.364-1.601-.797-2.305-1.5-.703-.704-1.136-1.367-1.5-2.305-.271-.703-.6-1.757-.688-3.711C3.62 25.976 3.6 25.344 3.6 20s.02-5.976.117-8.086c.088-1.954.417-3.008.688-3.711.364-.938.797-1.601 1.5-2.305.704-.703 1.367-1.136 2.305-1.5.703-.271 1.757-.6 3.711-.688C14.024 3.62 14.656 3.6 20 3.6M20 0c-5.43 0-6.11.023-8.242.12-2.125.097-3.577.434-4.85.93-1.313.512-2.43 1.195-3.539 2.305C2.26 4.464 1.577 5.58 1.065 6.894c-.496 1.273-.833 2.725-.93 4.85C.023 13.89 0 14.57 0 20s.023 6.11.12 8.242c.097 2.125.434 3.577.93 4.85.512 1.313 1.195 2.43 2.305 3.539 1.109 1.109 2.226 1.793 3.539 2.305 1.273.496 2.725.833 4.85.93 2.133.097 2.813.12 8.243.12 5.43 0 6.11-.023 8.242-.12 2.125-.097 3.577-.434 4.85-.93 1.313-.512 2.43-1.196 3.539-2.305 1.109-1.109 1.793-2.226 2.305-3.539.496-1.273.833-2.725.93-4.85.097-2.133.12-2.813.12-8.243s-.023-6.11-.12-8.242c-.097-2.125-.434-3.577-.93-4.85-.512-1.313-1.196-2.43-2.305-3.539-1.109-1.109-2.226-1.793-3.539-2.305-1.273-.496-2.725-.833-4.85-.93C26.11.023 25.43 0 20 0z" fill="url(#ig_grad)"/>
+                            <circle cx="30.675" cy="9.325" r="2.4" fill="url(#ig_grad)"/>
                         </svg>
                         <span>Instagram</span>
                     </div>
-                    <p class="social-embed-text">Watch student testimonials, behind-the-scenes content, and daily study abroad tips</p>
-                    <a href="https://www.instagram.com/thestudyabroad_consultant?igsh=NGZ0am90ZjhvNHlk" class="btn btn-secondary" target="_blank">Follow on Instagram</a>
+                    <p class="social-embed-text">📸 Daily study abroad tips, student takeovers, and success stories! Follow our journey.</p>
+                    <p class="social-embed-text">🇦🇺 "Just landed in Melbourne! Thanks to the amazing team!" - Priya S.</p>
+                    <a href="https://www.instagram.com/thestudyabroad_consultant" class="btn btn-outline btn-small" target="_blank">Follow on Instagram</a>
                 </div>
                 <div class="social-feed">
                     <div class="social-header">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" fill="#000000"/>
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M24.488 8.363A6.038 6.038 0 0119.777 3.05V2.5h-4.313v17.088a3.613 3.613 0 01-6.5 2.175 3.613 3.613 0 012.888-5.8 3.66 3.66 0 011.1.163V11.75a8.55 8.55 0 00-1.25-.063 7.913 7.913 0 00-7.825 9.438 7.913 7.913 0 0013.575 4.275 7.9 7.9 0 002.325-5.538v-8.75a10.2 10.2 0 005.963 1.9v-4.25a6.06 6.06 0 01-1.25-.1z" fill="#000"/>
                         </svg>
                         <span>TikTok</span>
                     </div>
-                    <p class="social-embed-text">Quick tips, student experiences, and fun educational content about studying abroad</p>
-                    <a href="https://www.tiktok.com/@thestudyabroadconsultant?_r=1&_t=ZG-93uwS2HvKeO" class="btn btn-secondary" target="_blank">Follow on TikTok</a>
+                    <p class="social-embed-text">🎵 Quick tips, student experiences, and fun educational content about studying abroad</p>
+                    <p class="social-embed-text">🇩🇪 "Visa approved for Germany in 3 weeks! Thank you!" - David N.</p>
+                    <a href="https://www.tiktok.com/@thestudyabroadconsultant" class="btn btn-outline btn-small" target="_blank">Follow on TikTok</a>
                 </div>
             </div>
         </div>
@@ -3208,7 +2065,7 @@
                         </svg>
                         Chat on WhatsApp
                     </a>
-                    <a href="mailto:cc.canadastudyadvisor@gmail.com" class="btn btn-secondary btn-large">
+                    <a href="mailto:cc.canadastudyadvisor@gmail.com" class="btn btn-outline btn-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                         </svg>
@@ -3225,19 +2082,19 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="footer-title">The Study Abroad Consultant</h3>
-                    <p class="footer-description">Your trusted partner in achieving global education dreams. With over 10 years of experience and 1,500+ successful placements.</p>
+                    <p class="footer-description">Your trusted partner in achieving global education dreams. With over 10 years of experience and 1,500+ successful placements across 6 countries.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/1AYxrWfT5f/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+                        <a href="https://www.facebook.com/share/1AYxrWfT5f/" target="_blank" aria-label="Facebook">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/thestudyabroad_consultant?igsh=NGZ0am90ZjhvNHlk" target="_blank" aria-label="Instagram">
+                        <a href="https://www.instagram.com/thestudyabroad_consultant" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
                             </svg>
                         </a>
-                        <a href="https://www.tiktok.com/@thestudyabroadconsultant?_r=1&_t=ZG-93uwS2HvKeO" target="_blank" aria-label="TikTok">
+                        <a href="https://www.tiktok.com/@thestudyabroadconsultant" target="_blank" aria-label="TikTok">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
                             </svg>
@@ -3251,22 +2108,23 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#process">Process</a></li>
                         <li><a href="#resources">Resources</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4 class="footer-heading">Contact Us</h4>
+                    <h4 class="footer-heading">Contact Info</h4>
                     <ul class="footer-contact">
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
                             </svg>
-                            <a href="mailto:cc.canadastudyadisor@gmail.com">cc.canadastudyadisor@gmail.com</a>
+                            <a href="mailto:cc.canadastudyadvisor@gmail.com">cc.canadastudyadvisor@gmail.com</a>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
                             </svg>
-                            <a href="https://wa.me/2348187861554" target="_blank">WhatsApp</a>
+                            <a href="https://wa.me/2348187861554" target="_blank">+234 818 786 1554</a>
                         </li>
                     </ul>
                 </div>
@@ -3280,7 +2138,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- JavaScript -->
     <script>
         // Cost Calculator Data
         const costData = {
@@ -3351,19 +2209,15 @@
         });
 
         // Navbar scroll effect
-        let lastScroll = 0;
         const nav = document.querySelector('.nav');
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            if (window.pageYOffset > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
             } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
                 nav.style.boxShadow = 'none';
             }
-            
-            lastScroll = currentScroll;
         });
 
         // Destination Tabs
@@ -3448,63 +2302,30 @@
             });
         });
 
-        // Loan Calculator Functions
-        function calculateLoan() {
-            const principal = parseFloat(document.getElementById('loanAmount').value);
-            const annualRate = parseFloat(document.getElementById('interestRate').value) / 100;
-            const years = parseInt(document.getElementById('loanTerm').value);
-            
-            const monthlyRate = annualRate / 12;
-            const numberOfPayments = years * 12;
-            
-            const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
-                                   (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-            
-            const totalRepayment = monthlyPayment * numberOfPayments;
-            const totalInterest = totalRepayment - principal;
-            
-            document.getElementById('monthlyPayment').textContent = '$' + monthlyPayment.toFixed(2);
-            document.getElementById('totalRepayment').textContent = '$' + totalRepayment.toFixed(2);
-            document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(2);
-            
-            document.getElementById('loanResults').classList.add('show');
-        }
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Loan Tab Switching
-        function switchLoanTab(tabName) {
-            document.querySelectorAll('.loan-panel').forEach(panel => {
-                panel.classList.remove('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-            
-            document.querySelectorAll('.loan-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
+        }, observerOptions);
 
-        // Provider Tab Switching
-        function switchProviderTab(tabName) {
-            const providersSection = document.getElementById('providers');
-            providersSection.querySelectorAll('.loan-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
-            
-            event.target.parentElement.querySelectorAll('.loan-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            providersSection.querySelector('#' + tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        // Calculate initial loan on page load
-        window.addEventListener('load', function() {
-            if (document.getElementById('loanAmount')) {
-                calculateLoan();
-            }
+        document.querySelectorAll('.service-card, .destination-panel, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
         });
+
+        // Year in footer
+        document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} The Study Abroad Consultant. All rights reserved.`;
     </script>
 </body>
 </html>
