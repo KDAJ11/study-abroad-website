@@ -191,6 +191,18 @@
             transition: all 0.3s ease;
         }
 
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
         /* Buttons */
         .btn {
             display: inline-flex;
@@ -1591,18 +1603,6 @@
                 display: flex;
             }
             
-            .mobile-menu-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            
-            .mobile-menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .mobile-menu-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -1972,7 +1972,7 @@
         </div>
     </section>
 
-    <!-- Destinations Section -->
+    <!-- Destinations Section - UPDATED WITH NEW UNIVERSITIES -->
     <section id="destinations" class="destinations">
         <div class="container">
             <div class="section-header">
@@ -1980,14 +1980,15 @@
                 <p class="section-description">Explore your options across six leading study destinations</p>
             </div>
             <div class="destinations-tabs">
-                <button class="destination-tab active" data-country="canada">Canada</button>
-                <button class="destination-tab" data-country="uk">UK</button>
-                <button class="destination-tab" data-country="usa">USA</button>
-                <button class="destination-tab" data-country="ireland">Ireland</button>
-                <button class="destination-tab" data-country="germany">Germany</button>
-                <button class="destination-tab" data-country="australia">Australia</button>
+                <button class="destination-tab active" data-country="canada">🇨🇦 Canada</button>
+                <button class="destination-tab" data-country="uk">🇬🇧 UK</button>
+                <button class="destination-tab" data-country="usa">🇺🇸 USA</button>
+                <button class="destination-tab" data-country="ireland">🇮🇪 Ireland</button>
+                <button class="destination-tab" data-country="germany">🇩🇪 Germany</button>
+                <button class="destination-tab" data-country="australia">🇦🇺 Australia</button>
             </div>
             <div class="destinations-content">
+                <!-- Canada -->
                 <div class="destination-panel active" data-country="canada">
                     <div class="destination-info">
                         <h3>Study in Canada</h3>
@@ -2021,15 +2022,17 @@
                         <div class="top-universities">
                             <h4>Top Universities</h4>
                             <div class="university-tags">
-                                <span>University of Toronto</span>
-                                <span>UBC</span>
-                                <span>McGill University</span>
+                                <span>University of Prince Edward Island</span>
+                                <span>University of Manitoba</span>
+                                <span>University of Regina</span>
+                                <span>University of Saskatchewan</span>
+                                <span>Lakehead University</span>
                                 <span>University of Waterloo</span>
-                                <span>McMaster University</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- UK -->
                 <div class="destination-panel" data-country="uk">
                     <div class="destination-info">
                         <h3>Study in the UK</h3>
@@ -2063,15 +2066,17 @@
                         <div class="top-universities">
                             <h4>Top Universities</h4>
                             <div class="university-tags">
-                                <span>University of Oxford</span>
-                                <span>University of Cambridge</span>
-                                <span>Imperial College London</span>
-                                <span>UCL</span>
-                                <span>LSE</span>
+                                <span>University of Lancaster</span>
+                                <span>University of East Anglia</span>
+                                <span>London South Bank University</span>
+                                <span>Nottingham Trent University</span>
+                                <span>Glasgow Caledonian University</span>
+                                <span>University of Essex</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- USA -->
                 <div class="destination-panel" data-country="usa">
                     <div class="destination-info">
                         <h3>Study in the USA</h3>
@@ -2105,15 +2110,16 @@
                         <div class="top-universities">
                             <h4>Top Universities</h4>
                             <div class="university-tags">
-                                <span>MIT</span>
-                                <span>Stanford</span>
-                                <span>Harvard</span>
-                                <span>UC Berkeley</span>
-                                <span>Columbia</span>
+                                <span>Cleveland State University</span>
+                                <span>University of Central Missouri</span>
+                                <span>California State University</span>
+                                <span>Arizona State University</span>
+                                <span>Towson University</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Ireland -->
                 <div class="destination-panel" data-country="ireland">
                     <div class="destination-info">
                         <h3>Study in Ireland</h3>
@@ -2147,14 +2153,16 @@
                         <div class="top-universities">
                             <h4>Top Universities</h4>
                             <div class="university-tags">
+                                <span>University of Limerick</span>
+                                <span>University College Dublin</span>
                                 <span>Trinity College Dublin</span>
-                                <span>UCD</span>
-                                <span>University of Galway</span>
-                                <span>UCC</span>
+                                <span>Dublin City University</span>
+                                <span>Maynooth University</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Germany -->
                 <div class="destination-panel" data-country="germany">
                     <div class="destination-info">
                         <h3>Study in Germany</h3>
@@ -2188,14 +2196,17 @@
                         <div class="top-universities">
                             <h4>Top Universities</h4>
                             <div class="university-tags">
-                                <span>TU Munich</span>
-                                <span>LMU Munich</span>
-                                <span>Heidelberg</span>
-                                <span>Humboldt University</span>
+                                <span>Lancaster University (Leipzig)</span>
+                                <span>Munich Business School</span>
+                                <span>SRH University</span>
+                                <span>EBS Universität</span>
+                                <span>Schiller International University</span>
+                                <span>Constructor University</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Australia -->
                 <div class="destination-panel" data-country="australia">
                     <div class="destination-info">
                         <h3>Study in Australia</h3>
@@ -2229,10 +2240,12 @@
                         <div class="top-universities">
                             <h4>Top Universities</h4>
                             <div class="university-tags">
-                                <span>ANU</span>
-                                <span>University of Melbourne</span>
-                                <span>University of Sydney</span>
-                                <span>UNSW</span>
+                                <span>Deakin University</span>
+                                <span>Griffith University</span>
+                                <span>University of Tasmania</span>
+                                <span>Charles Sturt University</span>
+                                <span>University of Notre Dame</span>
+                                <span>Federation University</span>
                             </div>
                         </div>
                     </div>
@@ -3091,7 +3104,6 @@
                                 </radialGradient>
                             </defs>
                             <path d="M16 2.88c4.275 0 4.781.016 6.469.093 1.563.071 2.406.331 2.969.55.75.291 1.281.638 1.844 1.2.562.563.909 1.094 1.2 1.844.219.563.479 1.406.55 2.969.077 1.688.093 2.194.093 6.469s-.016 4.781-.093 6.469c-.071 1.563-.331 2.406-.55 2.969-.291.75-.638 1.281-1.2 1.844-.563.562-1.094.909-1.844 1.2-.563.219-1.406.479-2.969.55-1.688.077-2.194.093-6.469.093s-4.781-.016-6.469-.093c-1.563-.071-2.406-.331-2.969-.55-.75-.291-1.281-.638-1.844-1.2-.562-.563-.909-1.094-1.2-1.844-.219-.563-.479-1.406-.55-2.969C2.896 20.781 2.88 20.275 2.88 16s.016-4.781.093-6.469c.071-1.563.331-2.406.55-2.969.291-.75.638-1.281 1.2-1.844.563-.562 1.094-.909 1.844-1.2.563-.219 1.406-.479 2.969-.55C11.219 2.896 11.725 2.88 16 2.88M16 0c-4.344 0-4.888.018-6.594.096-1.7.078-2.862.35-3.881.744-1.05.406-1.944.956-2.831 1.844C1.806 3.571 1.256 4.465.85 5.515c-.394 1.019-.666 2.181-.744 3.881C.018 11.112 0 11.656 0 16s.018 4.888.096 6.594c.078 1.7.35 2.862.744 3.881.406 1.05.956 1.944 1.844 2.831.887.888 1.781 1.438 2.831 1.844 1.019.394 2.181.666 3.881.744C11.112 31.982 11.656 32 16 32s4.888-.018 6.594-.096c1.7-.078 2.862-.35 3.881-.744 1.05-.406 1.944-.956 2.831-1.844.888-.887 1.438-1.781 1.844-2.831.394-1.019.666-2.181.744-3.881.078-1.706.096-2.25.096-6.594s-.018-4.888-.096-6.594c-.078-1.7-.35-2.862-.744-3.881-.406-1.05-.956-1.944-1.844-2.831-.887-.888-1.781-1.438-2.831-1.844-1.019-.394-2.181-.666-3.881-.744C20.888.018 20.344 0 16 0z" fill="url(#ig-gradient)"/>
-                            <path d="M16 7.784c-4.538 0-8.216 3.678-8.216 8.216 0 4.538 3.678 8.216 8.216 8.216 4.538 0 8.216-3.678 8.216-8.216 0-4.538-3.678-8.216-8.216-8.216zm0 13.55c-2.944 0-5.334-2.39-5.334-5.334 0-2.944 2.39-5.334 5.334-5.334 2.944 0 5.334 2.39 5.334 5.334 0 2.944-2.39 5.334-5.334 5.334z" fill="url(#ig-gradient)"/>
                             <circle cx="24.54" cy="7.46" r="1.92" fill="url(#ig-gradient)"/>
                         </svg>
                         <span>Instagram</span>
@@ -3198,6 +3210,7 @@
         </div>
     </footer>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Cost Calculator Data
         const costData = {
@@ -3378,7 +3391,7 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-              }, observerOptions);
+        }, observerOptions);
 
         // Loan Calculator Functions
         function calculateLoan() {
